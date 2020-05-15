@@ -1,0 +1,44 @@
+[
+  {
+    "id": "111",
+    "senderId": "1",
+    "receiverId": "777",
+    "timeUnixTime": "2020-04-15T18:25:43.511Z",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id": "2222",
+    "senderId": "1",
+    "receiverId": "777",
+    "timeUnixTime": "2020-02-15T18:26:43.511Z",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id": "3333",
+    "senderId": "777",
+    "receiverId": "1",
+    "timeUnixTime": "2020-05-15T18:29:43.511Z",
+    "message": "ipsum adipiscing elit"
+  },
+  {
+    "id": "444",
+    "senderId": "1",
+    "receiverId": "777",
+    "timeUnixTime": "2020-05-15T18:30:45.511Z",
+    "message": "consectetur adipiscing elit"
+  },
+  {
+    "id": "555",
+    "senderId": "777",
+    "receiverId": "1",
+    "timeUnixTime": "2020-05-15T18:49:43.511Z",
+    "message": "Lorem ipsum dolor sit amet"
+  },
+  {
+    "id": "666",
+    "senderId": "1",
+    "receiverId": "777",
+    "timeUnixTime": "2020-05-15T18:50:45.511Z",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+  }
+]

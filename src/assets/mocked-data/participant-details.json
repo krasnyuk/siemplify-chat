@@ -1,0 +1,29 @@
+[
+  {
+    "id": "111",
+    "userName": "John Doe",
+    "userId": "1",
+    "hasNewMessages": "true",
+    "lastMessageTime": "2020-02-15T18:26:43.511Z",
+    "image": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+    "roleTitle": "Project Manager"
+  },
+  {
+    "id": "222222",
+    "userName": "Agent Smith",
+    "userId": "2",
+    "hasNewMessages": "false",
+    "lastMessageTime": "2020-02-15T19:26:43.511Z",
+    "image": "",
+    "roleTitle": "HR Manager"
+  },
+  {
+    "id": "2233333222",
+    "userName": "Artem Krasniuk",
+    "userId": "3",
+    "hasNewMessages": "true",
+    "lastMessageTime": "2020-02-15T19:26:43.511Z",
+    "image": "",
+    "roleTitle": "Front-end developer"
+  }
+]
