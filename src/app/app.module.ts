@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {ChatModule} from "./shared/modules/chat/chat.module";
 import {HttpClientModule} from "@angular/common/http";
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import {HttpClientModule} from "@angular/common/http";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ChatModule
+    ChatModule,
+    environment.production ? [] : AkitaNgDevtools
   ],
   providers: [],
   bootstrap: [AppComponent]

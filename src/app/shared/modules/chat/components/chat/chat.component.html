@@ -1,1 +1,5 @@
-<p>chat works!</p>
+<div *ngIf="participants$ | async as participants">
+  <div *ngFor="let participant of participants">
+    {{participant.userName}}
+  </div>
+</div>
