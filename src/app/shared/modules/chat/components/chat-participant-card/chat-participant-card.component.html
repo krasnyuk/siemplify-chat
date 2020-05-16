@@ -1,1 +1,8 @@
-<p>chat-participant-card works!</p>
+<div *ngIf="participant" class="participant-card u-cursor u-cursor--pointer">
+  <div class="participant-card__main-info">
+    <smp-avatar [size]="avatarSize.Small" [name]="participant.userName" [image]="participant.image || undefined"
+                showInitials></smp-avatar>
+  </div>
+  <div class="participant-card__additional-info">
+  </div>
+</div>

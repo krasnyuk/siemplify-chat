@@ -7,7 +7,7 @@ import {ChatModule} from "./shared/modules/chat/chat.module";
 import {HttpClientModule} from "@angular/common/http";
 import {AkitaNgDevtools} from '@datorama/akita-ngdevtools';
 import {environment} from '../environments/environment';
-import {SmpDialogModule, SmpOverlayModule} from "@siemplify/ui";
+import {SmpAvatarModule, SmpDialogModule, SmpOverlayModule} from "@siemplify/ui";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
@@ -23,6 +23,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     environment.production ? [] : AkitaNgDevtools,
     SmpDialogModule.forRoot(),
     SmpOverlayModule.forRoot(),
+    SmpAvatarModule.forRoot(),
   ],
   bootstrap: [AppComponent]
 })

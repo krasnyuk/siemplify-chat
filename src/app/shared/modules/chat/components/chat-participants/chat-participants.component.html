@@ -1,1 +1,4 @@
-<p>chat-participants works!</p>
+<div *ngIf="participants$ | async as participants" class="chat-participants">
+  <app-chat-participant-card *ngFor="let participant of participants" [participant]="participant"
+                             class="chat-participants__card"></app-chat-participant-card>
+</div>

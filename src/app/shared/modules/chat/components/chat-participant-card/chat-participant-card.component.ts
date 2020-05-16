@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, Input} from '@angular/core';
+import {ChatParticipant} from "../../state/chat-participant/chat-participant.model";
+import {SmpComponentSizes} from "@siemplify/ui";
 
 @Component({
   selector: 'app-chat-participant-card',
@@ -7,6 +9,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChatParticipantCardComponent implements OnInit {
+  avatarSize = SmpComponentSizes;
+  
+  @Input() participant: ChatParticipant;
 
   constructor() { }
 
