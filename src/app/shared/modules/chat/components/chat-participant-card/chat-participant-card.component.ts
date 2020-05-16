@@ -10,7 +10,7 @@ import {SmpComponentSizes} from "@siemplify/ui";
 })
 export class ChatParticipantCardComponent implements OnInit {
   avatarSize = SmpComponentSizes;
-  
+
   @Input() participant: ChatParticipant;
 
   constructor() { }

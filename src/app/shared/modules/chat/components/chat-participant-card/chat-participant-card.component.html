@@ -1,7 +1,11 @@
 <div *ngIf="participant" class="participant-card u-cursor u-cursor--pointer">
   <div class="participant-card__main-info">
-    <smp-avatar [size]="avatarSize.Small" [name]="participant.userName" [image]="participant.image || undefined"
+    <smp-avatar class="participant-card__avatar" [size]="avatarSize.Small" [name]="participant.userName" [image]="participant.image || undefined"
                 showInitials></smp-avatar>
+    <div class="participant-card__user-info-container">
+      <div class="participant-card__user-name">{{participant.userName}}</div>
+      <div class="participant-card__user-role">{{participant.roleTitle}}</div>
+    </div>
   </div>
   <div class="participant-card__additional-info">
   </div>

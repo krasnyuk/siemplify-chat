@@ -1,6 +1,6 @@
 [
   {
-    "id": "111",
+    "id": "113334441",
     "userName": "John Doe",
     "userId": "1",
     "hasNewMessages": "true",
@@ -9,7 +9,7 @@
     "roleTitle": "Project Manager"
   },
   {
-    "id": "222222",
+    "id": "22889990-2222",
     "userName": "Agent Smith",
     "userId": "2",
     "hasNewMessages": "false",
@@ -18,7 +18,88 @@
     "roleTitle": "HR Manager"
   },
   {
-    "id": "2233333222",
+    "id": "223333327987822",
+    "userName": "Artem Krasniuk",
+    "userId": "3",
+    "hasNewMessages": "true",
+    "lastMessageTime": "2020-02-15T19:26:43.511Z",
+    "image": "",
+    "roleTitle": "Front-end developer"
+  },
+  {
+    "id": "11897891",
+    "userName": "John Doe",
+    "userId": "1",
+    "hasNewMessages": "true",
+    "lastMessageTime": "2020-02-15T18:26:43.511Z",
+    "image": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+    "roleTitle": "Project Manager"
+  },
+  {
+    "id": "2222222444422",
+    "userName": "Agent Smith",
+    "userId": "2",
+    "hasNewMessages": "false",
+    "lastMessageTime": "2020-02-15T19:26:43.511Z",
+    "image": "",
+    "roleTitle": "HR Manager"
+  },
+  {
+    "id": "223333327722",
+    "userName": "Artem Krasniuk",
+    "userId": "3",
+    "hasNewMessages": "true",
+    "lastMessageTime": "2020-02-15T19:26:43.511Z",
+    "image": "",
+    "roleTitle": "Front-end developer"
+  },
+  {
+    "id": "6666111",
+    "userName": "John Doe",
+    "userId": "1",
+    "hasNewMessages": "true",
+    "lastMessageTime": "2020-02-15T18:26:43.511Z",
+    "image": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+    "roleTitle": "Project Manager"
+  },
+  {
+    "id": "222222223322",
+    "userName": "Agent Smith",
+    "userId": "2",
+    "hasNewMessages": "false",
+    "lastMessageTime": "2020-02-15T19:26:43.511Z",
+    "image": "",
+    "roleTitle": "HR Manager"
+  },
+  {
+    "id": "22335675333222",
+    "userName": "Artem Krasniuk",
+    "userId": "3",
+    "hasNewMessages": "true",
+    "lastMessageTime": "2020-02-15T19:26:43.511Z",
+    "image": "",
+    "roleTitle": "Front-end developer"
+  },
+  {
+    "id": "1456456",
+    "userName": "John Doe",
+    "userId": "1",
+    "hasNewMessages": "true",
+    "lastMessageTime": "2020-02-15T18:26:43.511Z",
+    "image": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+    "roleTitle": "Project Manager"
+  },
+  {
+    "id": "24353422",
+    "userName": "Agent Smith",
+    "userId": "2",
+    "hasNewMessages": "false",
+    "lastMessageTime": "2020-02-15T19:26:43.511Z",
+    "image": "",
+    "roleTitle": "HR Manager"
+  },
+  {
+    "id": "22323423222",
     "userName": "Artem Krasniuk",
     "userId": "3",
     "hasNewMessages": "true",

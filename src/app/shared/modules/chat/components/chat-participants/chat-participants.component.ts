@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {Observable} from "rxjs";
 import {ChatParticipant} from "../../state/chat-participant/chat-participant.model";
 import {ChatParticipantsQuery} from "../../state/chat-participant/chat-participants.query";
@@ -15,10 +15,15 @@ export class ChatParticipantsComponent implements OnInit {
   participantsIsLoading$: Observable<boolean> = this.chatParticipantsQuery.participantsIsLoading$;
 
   constructor(private chatParticipantsQuery: ChatParticipantsQuery,
-              private chatParticipantsService: ChatParticipantsService) { }
+              private chatParticipantsService: ChatParticipantsService) {
+  }
 
   ngOnInit(): void {
     this.loadParticipants();
+  }
+
+  public trackById(index: number, item: { id: string }) {
+    return item.id;
   }
 
   private loadParticipants() {

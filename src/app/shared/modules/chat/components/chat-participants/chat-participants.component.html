@@ -1,4 +1,6 @@
-<div *ngIf="participants$ | async as participants" class="chat-participants">
-  <app-chat-participant-card *ngFor="let participant of participants" [participant]="participant"
-                             class="chat-participants__card"></app-chat-participant-card>
+<div class="participants-container">
+  <div *ngIf="participants$ | async as participants" class="chat-participants">
+    <app-chat-participant-card *ngFor="let participant of participants; trackBy: trackById" [participant]="participant"
+                               class="chat-participants__card"></app-chat-participant-card>
+  </div>
 </div>
