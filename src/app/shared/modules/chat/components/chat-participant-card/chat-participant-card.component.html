@@ -4,9 +4,12 @@
                 [image]="participant.image || undefined"
                 showInitials></smp-avatar>
     <div class="participant-card__user-info-container">
-      <div class="participant-card__user-name">{{participant.userName}}</div>
+      <div class="participant-card__user-name">
+        <smp-highlight [query]="participantsSearchFilter$ | async">{{participant.userName}}</smp-highlight>
+      </div>
       <div class="participant-card__user-role">
-        <smp-avatar class="participant-card__role-avatar avatar-squared" [size]="avatarSize.Xsmall" [name]="participant.roleTitle"
+        <smp-avatar class="participant-card__role-avatar avatar-squared" [size]="avatarSize.Xsmall"
+                    [name]="participant.roleTitle"
                     showInitials></smp-avatar>
         <span>{{participant.roleTitle}}</span>
       </div>
@@ -16,6 +19,7 @@
     <span class="participant-card__date-time">
       {{participant.lastMessageTime | date : 'EEE hh:mm a'}}
     </span>
-    <span class="participant-card__new-messages-indicator" [class.participant-card__new-messages-indicator--has-new]="participant.hasNewMessages"></span>
+    <span class="participant-card__new-messages-indicator"
+          [class.participant-card__new-messages-indicator--has-new]="participant.hasNewMessages"></span>
   </div>
 </div>
