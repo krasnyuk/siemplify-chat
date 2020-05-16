@@ -26,4 +26,8 @@ export class ChatParticipantsService {
       })
     );
   }
+
+  public updateParticipantsSearchFilter(filter: string): void {
+    this.chatParticipantsStore.updateParticipantsSearchFilter(filter);
+  }
 }

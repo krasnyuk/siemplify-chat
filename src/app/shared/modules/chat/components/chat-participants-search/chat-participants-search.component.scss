@@ -1,0 +1,21 @@
+.input-container {
+  position: relative;
+  margin-bottom: 13px;
+  margin-top: 27px;
+
+  .input-action {
+    position: absolute;
+    left: 8px;
+    top: 6px;
+  }
+
+  .input-control {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--bg-weight-400);
+    width: 100%;
+    padding: 6px 6px 6px 30px;
+    font-size: var(--size-regular);
+    color: var(--text-secondary-color);
+  }
+}

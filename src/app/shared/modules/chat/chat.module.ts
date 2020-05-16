@@ -2,21 +2,25 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ChatComponent} from './components/chat/chat.component';
 import {ChatDialogComponent} from './components/chat-dialog/chat-dialog.component';
-import {SmpAvatarModule, SmpDialogComponentsModule} from "@siemplify/ui";
+import {SmpActionsModule, SmpAvatarModule, SmpDialogComponentsModule} from "@siemplify/ui";
 import {OverlayContainer} from "@angular/cdk/overlay";
 import {ChatMessagesComponent} from './components/chat-messages/chat-messages.component';
 import {ChatInputAreaComponent} from './components/chat-input-area/chat-input-area.component';
 import {ChatParticipantCardComponent} from './components/chat-participant-card/chat-participant-card.component';
 import {ChatParticipantsComponent} from './components/chat-participants/chat-participants.component';
+import { ChatParticipantsSearchComponent } from './components/chat-participants-search/chat-participants-search.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
   imports: [
     CommonModule,
     SmpDialogComponentsModule,
-    SmpAvatarModule
+    SmpAvatarModule,
+    ReactiveFormsModule,
+    SmpActionsModule
   ],
-  declarations: [ChatComponent, ChatDialogComponent, ChatMessagesComponent, ChatInputAreaComponent, ChatParticipantCardComponent, ChatParticipantsComponent],
+  declarations: [ChatComponent, ChatDialogComponent, ChatMessagesComponent, ChatInputAreaComponent, ChatParticipantCardComponent, ChatParticipantsComponent, ChatParticipantsSearchComponent],
   exports: [ChatComponent]
 })
 export class ChatModule {
