@@ -2,3 +2,12 @@
 @import '~@siemplify/css/styles';
 
 @include smp-install-theme();
+
+
+/** Overrides for lib components - global styles. TODO: Move to separate folder */
+
+.chat-dialog {
+  .simp-dialog-colored__content {
+    flex: 1;
+  }
+}

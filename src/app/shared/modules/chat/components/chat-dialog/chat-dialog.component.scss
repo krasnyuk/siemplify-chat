@@ -1,8 +1,12 @@
 :host {
   display: block;
   width: 60vw; // TODO: make configurable via input
+  height: 60vh;
 }
 
 .chat-dialog {
   border-top: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
