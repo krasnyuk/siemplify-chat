@@ -19,16 +19,23 @@
     margin-right: 10px;
   }
 
+  &__role-avatar {
+    margin-right: 5px;
+  }
+
   &__user-name {
     font-weight: var(--weight-bold);
     font-size: var(--size-regular);
     line-height: 13px;
     color: var(--text-primary-color);
+    margin-bottom: 3px;
   }
 
   &__user-role {
     color: var(--text-secondary-color);
     font-size: 10px;
     line-height: 14px;
+    display: flex;
+    align-items: center;
   }
 }

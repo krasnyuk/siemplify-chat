@@ -7,5 +7,6 @@
 .chat-participants {
   flex: 1 1 auto;
   overflow-y: auto;
-  height: 0;
+  height: 0; // The element will have height because flexbox recalculates it unless you want a min-height
+  padding-right: 12px;
 }
