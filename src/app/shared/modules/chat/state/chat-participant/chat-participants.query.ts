@@ -7,6 +7,7 @@ import {ChatParticipant} from "./chat-participant.model";
 @Injectable({ providedIn: 'root' })
 export class ChatParticipantsQuery extends QueryEntity<ChatParticipantsState> {
   participants$: Observable<Array<ChatParticipant>> = this.selectAll();
+  participantsIsLoading$: Observable<boolean> = this.selectLoading();
 
   constructor(protected store: ChatParticipantsStore) {
     super(store);

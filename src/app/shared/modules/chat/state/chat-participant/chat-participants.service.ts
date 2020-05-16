@@ -16,8 +16,7 @@ export class ChatParticipantsService {
               @Inject(API_URL) private apiUrl: string) {
   }
 
-
-  public getParticipants(currentUserId: string): Observable<Array<ChatParticipant>> {
+  public getParticipants(): Observable<Array<ChatParticipant>> {
     this.chatParticipantsStore.setLoading(true);
     return this.http.get<Array<ChatParticipant>>(this.apiUrl + 'participant-details.json').pipe(
       delay(200), // TODO: mocked response

@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChatService} from "./shared/modules/chat/services/chat.service";
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,9 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  title = 'siemplify-chat';
+  constructor(private chatService: ChatService) {}
+
+  public openChat(): void {
+    this.chatService.openChat();
+  }
 }

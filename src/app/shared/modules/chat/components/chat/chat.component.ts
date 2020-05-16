@@ -11,18 +11,18 @@ import {ChatParticipant} from "../../state/chat-participant/chat-participant.mod
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChatComponent implements OnInit {
-  participants$: Observable<Array<ChatParticipant>>;
+  participants$: Observable<Array<ChatParticipant>> = this.chatParticipantsQuery.participants$;
+  participantsIsLoading$: Observable<boolean> = this.chatParticipantsQuery.participantsIsLoading$;
 
   constructor(private chatParticipantsQuery: ChatParticipantsQuery,
               private chatParticipantsService: ChatParticipantsService) {
   }
 
   ngOnInit(): void {
-    this.participants$ = this.chatParticipantsQuery.participants$;
     this.loadParticipants();
   }
 
   private loadParticipants() {
-    this.chatParticipantsService.getParticipants('1').subscribe();
+    this.chatParticipantsService.getParticipants().subscribe();
   }
 }
