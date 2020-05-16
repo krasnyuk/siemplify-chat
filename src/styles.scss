@@ -1,13 +1,28 @@
 @import '~@siemplify/ui/styles/main';
 @import '~@siemplify/css/styles';
+@import '~@siemplify/css/7-themes/theme';
 
 @include smp-install-theme();
 
 
 /** Overrides for lib components - global styles. TODO: Move to separate folder */
 
-.chat-dialog {
-  .simp-dialog-colored__content {
-    flex: 1;
+.simp-dialog-colored {
+
+  /* Chat dialog customization */
+  &.chat-dialog {
+    background-color: var(--dark-700);
+    box-shadow: -4px 7px 26px rgba(0, 0, 0, 0.35);
+
+    .simp-dialog-colored-header {
+      background-color: var(--dark-600);
+      color: var(--dark-100);
+    }
+
+    .simp-dialog-colored__content {
+      flex: 1;
+      padding: 0;
+    }
   }
 }
+
