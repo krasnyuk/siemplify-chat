@@ -14,7 +14,6 @@ import {BaseUnsubscribe} from "../../../../../core/base/base-unsubscribe";
 })
 export class ChatParticipantsComponent extends BaseUnsubscribe implements OnInit {
   participants$: Observable<Array<ChatParticipant>> = this.chatParticipantsQuery.participants$;
-  participantsIsLoading$: Observable<boolean> = this.chatParticipantsQuery.participantsIsLoading$;
 
   constructor(private chatParticipantsQuery: ChatParticipantsQuery,
               private chatParticipantsService: ChatParticipantsService) {
@@ -30,7 +29,7 @@ export class ChatParticipantsComponent extends BaseUnsubscribe implements OnInit
   }
 
   private loadParticipants() {
-    this.chatParticipantsService.getParticipants().pipe(
+    this.chatParticipantsService.getParticipantsWithInterval().pipe(
       takeUntil(this.componentDestroyed$)
     ).subscribe();
   }
