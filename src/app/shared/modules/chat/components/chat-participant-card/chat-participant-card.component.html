@@ -13,5 +13,9 @@
     </div>
   </div>
   <div class="participant-card__additional-info">
+    <span class="participant-card__date-time">
+      {{participant.lastMessageTime | date : 'EEE hh:mm a'}}
+    </span>
+    <span class="participant-card__new-messages-indicator" [class.participant-card__new-messages-indicator--has-new]="participant.hasNewMessages"></span>
   </div>
 </div>

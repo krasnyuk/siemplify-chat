@@ -19,7 +19,7 @@ export class ChatParticipantsService {
   public getParticipants(): Observable<Array<ChatParticipant>> {
     this.chatParticipantsStore.setLoading(true);
     return this.http.get<Array<ChatParticipant>>(this.apiUrl + 'participant-details.json').pipe(
-      delay(200), // TODO: mocked response
+      delay(100), // TODO: mocked response
       withTransaction((participants: Array<ChatParticipant>) => {
         this.chatParticipantsStore.set(participants);
         this.chatParticipantsStore.setLoading(false);
