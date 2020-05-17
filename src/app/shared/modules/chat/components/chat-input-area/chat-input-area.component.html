@@ -1,1 +1,4 @@
-<p>chat-input-area works!</p>
+<div class="control-container">
+  <input (keyup.enter)="sendMessage()" class="chat-input-control" type="text" [formControl]="inputControl"
+         placeholder="Type a message...">
+</div>

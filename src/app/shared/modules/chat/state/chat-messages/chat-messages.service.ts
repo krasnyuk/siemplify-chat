@@ -2,10 +2,10 @@ import {Inject, Injectable} from '@angular/core';
 import {ChatMessagesStore} from './chat-messages.store';
 import {HttpClient} from "@angular/common/http";
 import {API_URL} from "../../../../../core/tokens/api-url.token";
-import {Observable} from "rxjs";
+import {EMPTY, Observable} from "rxjs";
 import {ChatParticipant} from "../chat-participant/chat-participant.model";
-import {delay, map} from "rxjs/operators";
-import {withTransaction} from "@datorama/akita";
+import {catchError, delay, map, tap} from "rxjs/operators";
+import {guid, withTransaction} from "@datorama/akita";
 import {ChatMessage} from "./chat-message.model";
 
 @Injectable({providedIn: 'root'})
@@ -25,6 +25,22 @@ export class ChatMessagesService {
         this.chatMessagesStore.set(messages);
         this.chatMessagesStore.setLoading(false);
       })
+    );
+  }
+
+  /** Mocked send message */
+  public sendMessage(messageContent: string): Observable<ChatMessage> {
+    return this.http.post<ChatMessage>(this.apiUrl + 'chat-messages.json', {messageContent}).pipe(
+      catchError(() => {
+        this.chatMessagesStore.add({
+          id: guid(),
+          timeUnixTime: new Date().toISOString(),
+          message: messageContent,
+          senderId: '1',
+          receiverId: '777'
+        });
+        return EMPTY;
+      }),
     );
   }
 

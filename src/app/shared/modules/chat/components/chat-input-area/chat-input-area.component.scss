@@ -1,0 +1,21 @@
+.control-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .chat-input-control {
+    background-color: transparent;
+    border: none;
+    flex: 1;
+    padding-top: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    font-size: var(--size-regular);
+    color: var(--text-primary-color);
+
+    &::placeholder {
+      color: var(--text-primary-color);
+    }
+  }
+}
