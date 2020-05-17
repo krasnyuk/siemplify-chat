@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right: 12px;
 
   &:hover, &--selected {
     background-color: var(--bg-weight-500);

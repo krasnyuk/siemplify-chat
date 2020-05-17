@@ -1,1 +1,5 @@
-<p>Please select a chat to start messaging</p>
+<div class="messages-section-container">
+  <div *ngIf="!(hasSelectedParticipant$ | async)" [@fadeInOut] class="blank-message-container">
+    <p>Please select a chat to start messaging</p>
+  </div>
+</div>
