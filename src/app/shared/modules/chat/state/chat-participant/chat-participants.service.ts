@@ -7,6 +7,7 @@ import {Observable, timer} from "rxjs";
 import {API_URL} from "../../../../../core/tokens/api-url.token";
 import {ChatParticipant} from "./chat-participant.model";
 import {withTransaction} from "@datorama/akita";
+import {POLLING_INTERVAL} from "../../../../../core/constants";
 
 @Injectable({providedIn: 'root'})
 export class ChatParticipantsService {
@@ -16,7 +17,7 @@ export class ChatParticipantsService {
               @Inject(API_URL) private apiUrl: string) {
   }
 
-  public getParticipantsWithInterval(interval: number = 50000): Observable<Array<ChatParticipant>> {
+  public getParticipantsWithInterval(interval: number = POLLING_INTERVAL): Observable<Array<ChatParticipant>> {
     return timer(0, interval).pipe(
       switchMap(() => this.getParticipants())
     );

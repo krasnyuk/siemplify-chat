@@ -1,1 +1,6 @@
-<p>chat-messages-list works!</p>
+<div *ngFor="let group of messagesGroups$ | async">
+  <div>{{group.date | date}}</div>
+  <div *ngFor="let message of group.messages">
+    <p>{{message.message}}</p>
+  </div>
+</div>

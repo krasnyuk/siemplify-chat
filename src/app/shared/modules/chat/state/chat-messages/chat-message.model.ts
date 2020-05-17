@@ -5,3 +5,8 @@ export interface ChatMessage {
   timeUnixTime: string;
   message: string;
 }
+
+export interface ChatMessagesGroup {
+  date: Date;
+  messages: Array<ChatMessage>;
+}
