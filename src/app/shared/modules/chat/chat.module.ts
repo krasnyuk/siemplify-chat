@@ -11,6 +11,8 @@ import {ChatParticipantsComponent} from './components/chat-participants/chat-par
 import { ChatParticipantsSearchComponent } from './components/chat-participants-search/chat-participants-search.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { ChatMessagesListComponent } from './components/chat-messages-list/chat-messages-list.component';
+import { ChatMessagesGroupComponent } from './components/chat-messages-group/chat-messages-group.component';
+import { IsTodayPipe } from './pipes/is-today.pipe';
 
 
 @NgModule({
@@ -22,7 +24,7 @@ import { ChatMessagesListComponent } from './components/chat-messages-list/chat-
     SmpActionsModule,
     SmpHighlightModule
   ],
-  declarations: [ChatComponent, ChatDialogComponent, ChatMessagesComponent, ChatInputAreaComponent, ChatParticipantCardComponent, ChatParticipantsComponent, ChatParticipantsSearchComponent, ChatMessagesListComponent],
+  declarations: [ChatComponent, ChatDialogComponent, ChatMessagesComponent, ChatInputAreaComponent, ChatParticipantCardComponent, ChatParticipantsComponent, ChatParticipantsSearchComponent, ChatMessagesListComponent, ChatMessagesGroupComponent, IsTodayPipe],
   exports: [ChatComponent]
 })
 export class ChatModule {

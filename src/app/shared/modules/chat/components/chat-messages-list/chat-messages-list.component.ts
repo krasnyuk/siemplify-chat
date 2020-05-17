@@ -18,4 +18,8 @@ export class ChatMessagesListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public trackByDate(index, group: ChatMessagesGroup) {
+    return group.date.getTime();
+  }
+
 }

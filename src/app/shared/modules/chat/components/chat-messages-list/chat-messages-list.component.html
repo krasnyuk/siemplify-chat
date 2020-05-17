@@ -1,6 +1,2 @@
-<div *ngFor="let group of messagesGroups$ | async">
-  <div>{{group.date | date}}</div>
-  <div *ngFor="let message of group.messages">
-    <p>{{message.message}}</p>
-  </div>
-</div>
+<app-chat-messages-group *ngFor="let group of messagesGroups$ | async; trackBy: trackByDate; let isFirst = first"
+                         [messagesGroup]="group" [isFirst]="isFirst"></app-chat-messages-group>

@@ -1,0 +1,16 @@
+.messages-group {
+  margin-bottom: 70px;
+
+  &--first {
+    margin-top: 23px;
+  }
+
+  &__title {
+    font-weight: var(--weight-semibold);
+    font-size: 10px;
+    color: var(--text-secondary-color);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 19px;
+  }
+}

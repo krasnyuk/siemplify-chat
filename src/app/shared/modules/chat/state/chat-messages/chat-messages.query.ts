@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Order, QueryConfig, QueryEntity} from '@datorama/akita';
+import {QueryEntity} from '@datorama/akita';
 import {ChatMessagesState, ChatMessagesStore} from './chat-messages.store';
 import {Observable} from "rxjs";
 import {ChatMessage, ChatMessagesGroup} from "./chat-message.model";

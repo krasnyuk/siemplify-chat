@@ -1,0 +1,8 @@
+<div *ngIf="messagesGroup" class="messages-group" [class.messages-group--first]="isFirst">
+  <h5 class="messages-group__title">
+    {{(messagesGroup.date | isToday) ? 'Today' : (messagesGroup.date | date : 'MMM d')}}
+  </h5>
+  <div *ngFor="let message of messagesGroup.messages">
+    {{message.message}}
+  </div>
+</div>
