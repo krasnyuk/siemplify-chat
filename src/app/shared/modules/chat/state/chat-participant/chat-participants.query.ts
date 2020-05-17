@@ -21,6 +21,7 @@ export class ChatParticipantsQuery extends QueryEntity<ChatParticipantsState> {
       });
     })
   );
+  selectedParticipantId$: Observable<string | null> = this.selectActiveId();
 
   constructor(protected store: ChatParticipantsStore) {
     super(store);

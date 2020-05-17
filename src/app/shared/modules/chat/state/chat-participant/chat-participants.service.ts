@@ -30,7 +30,7 @@ export class ChatParticipantsService {
       // TODO: delete - emulates hasNewMessages changes for polling demo
       map((participants: Array<ChatParticipant>) => participants.map((item: ChatParticipant) => ({
         ...item,
-        hasNewMessages: Math.random() >= 0.1 // TODO: delete. Generates random boolean for demo purpose
+        hasNewMessages: Math.random() >= 0.5 // TODO: delete. Generates random boolean for demo purpose
       }))),
       withTransaction((participants: Array<ChatParticipant>) => {
         this.chatParticipantsStore.set(participants);
@@ -41,5 +41,9 @@ export class ChatParticipantsService {
 
   public updateParticipantsSearchFilter(filter: string): void {
     this.chatParticipantsStore.updateParticipantsSearchFilter(filter);
+  }
+
+  public setSelectedParticipant(participantId: string): void {
+    this.chatParticipantsStore.setSelectedParticipantId(participantId);
   }
 }

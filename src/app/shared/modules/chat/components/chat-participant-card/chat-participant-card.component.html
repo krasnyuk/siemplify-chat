@@ -1,4 +1,5 @@
-<div *ngIf="participant" class="participant-card u-cursor u-cursor--pointer">
+<div *ngIf="participant" (click)="setSelectedParticipant()" class="participant-card u-cursor u-cursor--pointer"
+     [class.participant-card--selected]="(selectedParticipantId$ | async) === participant.id">
   <div class="participant-card__main-info">
     <smp-avatar class="participant-card__avatar" [size]="avatarSize.Small" [name]="participant.userName"
                 [image]="participant.image || undefined"

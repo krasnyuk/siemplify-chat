@@ -9,7 +9,8 @@ export interface ChatParticipantsState extends EntityState<ChatParticipant, stri
 }
 
 const initialState: Partial<ChatParticipantsState> = {
-  ui: {participantsSearchFilter: null}
+  ui: {participantsSearchFilter: null},
+  active: null
 };
 
 @Injectable({providedIn: 'root'})
@@ -22,5 +23,9 @@ export class ChatParticipantsStore extends EntityStore<ChatParticipantsState> {
 
   updateParticipantsSearchFilter(participantsSearchFilter: string) {
     this.update({ui: {participantsSearchFilter}});
+  }
+
+  setSelectedParticipantId(participantId: string): void {
+    this.setActive(participantId);
   }
 }

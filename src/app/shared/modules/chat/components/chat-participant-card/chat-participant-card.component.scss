@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
 
-  &:hover {
+  &:hover, &--selected {
     background-color: var(--bg-weight-500);
   }
 
@@ -55,6 +55,7 @@
     border-radius: 50%;
     background-color: transparent;
     margin-left: 3px;
+    transition: background-color 0.2s ease-in-out;
 
     &--has-new {
       background-color: var(--blue-500);
