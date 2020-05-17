@@ -1,0 +1,71 @@
+:host {
+  display: block;
+}
+
+$message-side-offset: 36px;
+
+.message {
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: $message-side-offset;
+  position: relative;
+
+  &--mine {
+    justify-content: flex-end;
+    padding-left: 0;
+    padding-right: $message-side-offset;
+  }
+
+  &--offset-top {
+    margin-top: 64px;
+  }
+
+  &--offset-bottom {
+    margin-bottom: 64px;
+  }
+
+  &__content {
+    background-color: var(--bg-weight-500);
+    border-radius: 4px 4px 4px 0;
+    padding: 8px 10px;
+    font-size: var(--size-regular);
+    line-height: var(--size-heading-2);
+    max-width: 65%;
+
+    .message--mine & {
+      background-color: var(--blue-500);
+      border-radius: 4px 0 4px 4px;
+      color: var(--light-100);
+    }
+  }
+
+  &__avatar-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: $message-side-offset;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .message--mine & {
+      left: unset;
+      right: 0;
+    }
+  }
+
+  &__time {
+    position: absolute;
+    top: calc(100% + 7px);
+    left: $message-side-offset;
+    color: var(--text-secondary-color);
+    font-size: 10px;
+
+    .message--mine & {
+      left: unset;
+      right: $message-side-offset;
+    }
+  }
+}

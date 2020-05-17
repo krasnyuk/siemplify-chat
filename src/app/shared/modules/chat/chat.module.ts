@@ -8,11 +8,12 @@ import {ChatMessagesComponent} from './components/chat-messages/chat-messages.co
 import {ChatInputAreaComponent} from './components/chat-input-area/chat-input-area.component';
 import {ChatParticipantCardComponent} from './components/chat-participant-card/chat-participant-card.component';
 import {ChatParticipantsComponent} from './components/chat-participants/chat-participants.component';
-import { ChatParticipantsSearchComponent } from './components/chat-participants-search/chat-participants-search.component';
+import {ChatParticipantsSearchComponent} from './components/chat-participants-search/chat-participants-search.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import { ChatMessagesListComponent } from './components/chat-messages-list/chat-messages-list.component';
-import { ChatMessagesGroupComponent } from './components/chat-messages-group/chat-messages-group.component';
-import { IsTodayPipe } from './pipes/is-today.pipe';
+import {ChatMessagesListComponent} from './components/chat-messages-list/chat-messages-list.component';
+import {ChatMessagesGroupComponent} from './components/chat-messages-group/chat-messages-group.component';
+import {IsTodayPipe} from './pipes/is-today.pipe';
+import { ChatMessageComponent } from './components/chat-message/chat-message.component';
 
 
 @NgModule({
@@ -24,7 +25,19 @@ import { IsTodayPipe } from './pipes/is-today.pipe';
     SmpActionsModule,
     SmpHighlightModule
   ],
-  declarations: [ChatComponent, ChatDialogComponent, ChatMessagesComponent, ChatInputAreaComponent, ChatParticipantCardComponent, ChatParticipantsComponent, ChatParticipantsSearchComponent, ChatMessagesListComponent, ChatMessagesGroupComponent, IsTodayPipe],
+  declarations: [
+    ChatComponent,
+    ChatDialogComponent,
+    ChatMessagesComponent,
+    ChatInputAreaComponent,
+    ChatParticipantCardComponent,
+    ChatParticipantsComponent,
+    ChatParticipantsSearchComponent,
+    ChatMessagesListComponent,
+    ChatMessagesGroupComponent,
+    IsTodayPipe,
+    ChatMessageComponent,
+  ],
   exports: [ChatComponent]
 })
 export class ChatModule {

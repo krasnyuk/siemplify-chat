@@ -1,4 +1,4 @@
-import {Component, OnInit, ChangeDetectionStrategy, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {ChatMessage, ChatMessagesGroup} from "../../state/chat-messages/chat-message.model";
 
 @Component({

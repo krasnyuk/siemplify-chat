@@ -1,0 +1,17 @@
+<div *ngIf="message" class="message"
+     [ngClass]="{
+     'message--first': isFirst,
+     'message--mine': isMine,
+     'message--offset-top': (!senderSameAsPrevious && isMine && !isFirst),
+     'message--offset-bottom': (!senderSameAsNext && isMine)
+     }">
+  <div *ngIf="!senderSameAsPrevious" class="message__avatar-container">
+    <smp-avatar *ngIf="selectedParticipant$ | async as selectedParticipant"
+                [size]="avatarSize.Xsmall"
+                [name]="isMine ? currentUserName : selectedParticipant.userName"
+                [image]="isMine ? currentUserImage : (selectedParticipant.image || undefined)"
+                showInitials></smp-avatar>
+  </div>
+  <div class="message__content">{{message.message}}</div>
+  <div *ngIf="!senderSameAsNext" class="message__time">{{message.timeUnixTime | date: 'h:mm a'}}</div>
+</div>

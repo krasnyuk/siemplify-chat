@@ -11,6 +11,7 @@ export class ChatParticipantsQuery extends QueryEntity<ChatParticipantsState> {
   participantsSearchFilter$: Observable<string>;
   participants$: Observable<Array<ChatParticipant>>;
   selectedParticipantId$: Observable<string | null>;
+  selectedParticipant$: Observable<ChatParticipant | null>;
   hasSelectedParticipant$: Observable<boolean>;
 
   constructor(protected store: ChatParticipantsStore) {
@@ -19,6 +20,7 @@ export class ChatParticipantsQuery extends QueryEntity<ChatParticipantsState> {
     this.participantsSearchFilter$ = this.select(state => state.ui.participantsSearchFilter);
     this.participants$ = this.getParticipants();
     this.selectedParticipantId$ = this.selectActiveId();
+    this.selectedParticipant$ = this.selectActive();
     this.hasSelectedParticipant$ = this.selectedParticipantId$.pipe(
       map((selectedParticipantId: string | null) => selectedParticipantId !== null)
     );
