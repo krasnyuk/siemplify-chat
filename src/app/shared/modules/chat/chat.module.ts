@@ -10,6 +10,7 @@ import {ChatParticipantCardComponent} from './components/chat-participant-card/c
 import {ChatParticipantsComponent} from './components/chat-participants/chat-participants.component';
 import { ChatParticipantsSearchComponent } from './components/chat-participants-search/chat-participants-search.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { ChatMessagesListComponent } from './components/chat-messages-list/chat-messages-list.component';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     SmpActionsModule,
     SmpHighlightModule
   ],
-  declarations: [ChatComponent, ChatDialogComponent, ChatMessagesComponent, ChatInputAreaComponent, ChatParticipantCardComponent, ChatParticipantsComponent, ChatParticipantsSearchComponent],
+  declarations: [ChatComponent, ChatDialogComponent, ChatMessagesComponent, ChatInputAreaComponent, ChatParticipantCardComponent, ChatParticipantsComponent, ChatParticipantsSearchComponent, ChatMessagesListComponent],
   exports: [ChatComponent]
 })
 export class ChatModule {

@@ -14,3 +14,17 @@
   justify-content: center;
   align-items: center;
 }
+
+.messages-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 16px;
+
+  &__list {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    height: 0;
+    border-bottom: 1px solid var(--bg-weight-400);
+  }
+}

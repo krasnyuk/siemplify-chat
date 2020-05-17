@@ -16,7 +16,7 @@ export class ChatParticipantsService {
               @Inject(API_URL) private apiUrl: string) {
   }
 
-  public getParticipantsWithInterval(interval: number = 5000): Observable<Array<ChatParticipant>> {
+  public getParticipantsWithInterval(interval: number = 50000): Observable<Array<ChatParticipant>> {
     return timer(0, interval).pipe(
       switchMap(() => this.getParticipants())
     );
