@@ -4,7 +4,7 @@
   </h5>
   <app-chat-message *ngFor="let message of messagesGroup.messages; trackBy: trackById; let isFirst = first; let i = index"
                     [message]="message"
-                    [senderSameAsPrevious]="message.senderId === messagesGroup.messages[i - 1]?.senderId"
-                    [senderSameAsNext]="message.senderId === messagesGroup.messages[i + 1]?.senderId"
+                    [senderSameAsPrevious]="message.fromMember === messagesGroup.messages[i - 1]?.fromMember"
+                    [senderSameAsNext]="message.fromMember === messagesGroup.messages[i + 1]?.fromMember"
                     [isFirst]="isFirst"></app-chat-message>
 </div>

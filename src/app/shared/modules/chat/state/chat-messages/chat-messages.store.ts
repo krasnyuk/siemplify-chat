@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {EntityState, EntityStore, StoreConfig} from '@datorama/akita';
-import {ChatMessage} from './chat-message.model';
+import {ChatChannelMessageDM} from '../../models/chat-message.model';
 
-export interface ChatMessagesState extends EntityState<ChatMessage, string> {
+export interface ChatMessagesState extends EntityState<ChatChannelMessageDM, number> {
 }
 
 @Injectable({providedIn: 'root'})

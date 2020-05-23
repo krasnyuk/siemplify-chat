@@ -4,7 +4,7 @@
 
 $message-side-offset: 36px;
 
-.message {
+.chat-message {
   margin-bottom: 6px;
   display: flex;
   justify-content: flex-start;
@@ -33,7 +33,7 @@ $message-side-offset: 36px;
     line-height: var(--size-heading-2);
     max-width: 65%;
 
-    .message--mine & {
+    .chat-message--mine & {
       background-color: var(--blue-500);
       border-radius: 4px 0 4px 4px;
       color: var(--light-100);
@@ -50,7 +50,7 @@ $message-side-offset: 36px;
     align-items: center;
     justify-content: center;
 
-    .message--mine & {
+    .chat-message--mine & {
       left: unset;
       right: 0;
     }
@@ -63,7 +63,7 @@ $message-side-offset: 36px;
     color: var(--text-secondary-color);
     font-size: 10px;
 
-    .message--mine & {
+    .chat-message--mine & {
       left: unset;
       right: $message-side-offset;
     }

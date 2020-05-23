@@ -1,4 +1,5 @@
 export interface ChatChannelMessageDM {
+  id: number;
   objectId: number;
   channelIdentifier: string;
   sentTime: number;

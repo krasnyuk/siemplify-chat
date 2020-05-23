@@ -1,11 +1,13 @@
 import {Inject, Injectable} from '@angular/core';
 import {ChatMessagesStore} from './chat-messages.store';
-import {HttpClient} from "@angular/common/http";
-import {API_URL} from "../../../../../core/tokens/api-url.token";
-import {EMPTY, Observable} from "rxjs";
-import {catchError, delay} from "rxjs/operators";
-import {guid, withTransaction} from "@datorama/akita";
-import {ChatMessage} from "./chat-message.model";
+import {HttpClient} from '@angular/common/http';
+import {API_URL} from '../../../../../core/tokens/api-url.token';
+import {EMPTY, Observable} from 'rxjs';
+import {catchError, delay} from 'rxjs/operators';
+import {withTransaction} from '@datorama/akita';
+import {ChatChannelMessageDM} from '../../models/chat-message.model';
+import {ConversationRequestDM} from '../../models/conversation-request.model';
+import {SendMessageRequestDM} from '../../models/send-message-request.model';
 
 @Injectable({providedIn: 'root'})
 export class ChatMessagesService {
@@ -15,12 +17,15 @@ export class ChatMessagesService {
               @Inject(API_URL) private apiUrl: string) {
   }
 
-  public getChatMessages(participantId: string): Observable<Array<ChatMessage>> {
+  /* TODO: use real objectId */
+  public getChannelMessages(channelId: string, objectId: number = 0): Observable<Array<ChatChannelMessageDM>> {
     this.chatMessagesStore.setLoading(true);
-    return this.http.get<Array<ChatMessage>>(this.apiUrl + 'chat-messages.json', {params: {participantId}}).pipe(
+    const request: ConversationRequestDM = {channelIdentifier: channelId, objectId};
+    /* TODO: replace with post */
+    return this.http.get<Array<ChatChannelMessageDM>>(this.apiUrl + 'chat-messages.json', {params: {channelId}}).pipe(
       // TODO: delete emulated response time
       delay(100),
-      withTransaction((messages: Array<ChatMessage>) => {
+      withTransaction((messages: Array<ChatChannelMessageDM>) => {
         this.chatMessagesStore.set(messages);
         this.chatMessagesStore.setLoading(false);
       })
@@ -28,15 +33,19 @@ export class ChatMessagesService {
   }
 
   /** Mocked send message */
-  public sendMessage(messageContent: string): Observable<ChatMessage> {
-    return this.http.post<ChatMessage>(this.apiUrl + 'chat-messages.json', {messageContent}).pipe(
+  public sendMessage(messageContent: string, channelId: string = 'some', objectId: number = 0): Observable<ChatChannelMessageDM> {
+    const request: SendMessageRequestDM = {message: messageContent, channelIdentifier: channelId, objectId};
+    return this.http.post<ChatChannelMessageDM>(this.apiUrl + 'chat-messages.json', {messageContent}).pipe(
       catchError(() => {
         this.chatMessagesStore.add({
-          id: guid(),
-          timeUnixTime: new Date().toISOString(),
+          id: Math.floor(Math.random() * 100000),
+          sentTime: new Date().getTime(),
           message: messageContent,
-          senderId: '1',
-          receiverId: '777'
+          fromMember: '1',
+          isCurrentUser: true,
+          fromMemberName: 'Me',
+          channelIdentifier: channelId,
+          objectId
         });
         return EMPTY;
       }),

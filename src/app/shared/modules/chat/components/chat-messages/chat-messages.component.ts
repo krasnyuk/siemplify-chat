@@ -22,16 +22,16 @@ export class ChatMessagesComponent extends BaseUnsubscribe implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadMessagesForSelectedParticipant();
+    this.loadMessagesForSelectedChannel();
   }
 
-  private loadMessagesForSelectedParticipant() {
-    const selectedParticipantId$ = this.chatChanelsQuery.selectedChannelId$.pipe(
-      filter((selectedParticipantId: string | null) => selectedParticipantId !== null)
+  private loadMessagesForSelectedChannel() {
+    const selectedChannelId$ = this.chatChanelsQuery.selectedChannelId$.pipe(
+      filter((selectedChannelId: string | null) => selectedChannelId !== null)
     );
     const pollingInterval$ = timer(0, POLLING_INTERVAL);
-    combineLatest(selectedParticipantId$, pollingInterval$).pipe(
-      switchMap(([selectedParticipantId, _]) => this.chatMessagesService.getChatMessages(selectedParticipantId)),
+    combineLatest(selectedChannelId$, pollingInterval$).pipe(
+      switchMap(([selectedChannelId, _]) => this.chatMessagesService.getChannelMessages(selectedChannelId)),
       takeUntil(this.componentDestroyed$)
     ).subscribe();
   }

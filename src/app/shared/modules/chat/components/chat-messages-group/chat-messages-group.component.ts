@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {ChatMessage, ChatMessagesGroup} from "../../state/chat-messages/chat-message.model";
+import {ChatMessagesGroupVM} from '../../models/chat-messages-group-vm.model';
+import {ChatChannelMessageDM} from '../../models/chat-message.model';
 
 @Component({
   selector: 'app-chat-messages-group',
@@ -8,7 +9,7 @@ import {ChatMessage, ChatMessagesGroup} from "../../state/chat-messages/chat-mes
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChatMessagesGroupComponent implements OnInit {
-  @Input() messagesGroup: ChatMessagesGroup;
+  @Input() messagesGroup: ChatMessagesGroupVM;
 
   constructor() {
   }
@@ -16,7 +17,7 @@ export class ChatMessagesGroupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public trackById(index: number, message: ChatMessage) {
+  public trackById(index: number, message: ChatChannelMessageDM) {
     return message.id;
   }
 

@@ -1,100 +1,52 @@
 [
   {
-    "id": "111",
-    "senderId": "777",
-    "receiverId": "1",
-    "timeUnixTime": "2020-04-13T18:25:43.511Z",
-    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "id": 1234567890,
+    "objectId": 12345673453890,
+    "channelIdentifier": "12345678901234567890",
+    "sentTime": 1590171600,
+    "fromMember": "333",
+    "fromMemberName": "John Doe",
+    "isCurrentUser": false,
+    "message": "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium"
   },
   {
-    "id": "11534531",
-    "senderId": "777",
-    "receiverId": "1",
-    "timeUnixTime": "2020-04-13T18:26:43.511Z",
-    "message": "Sed do eiusmod tempor incididunt."
+    "id": 123453242367890,
+    "objectId": 12345673453890,
+    "channelIdentifier": "12345678901234567890",
+    "sentTime": 1590171620,
+    "fromMember": "333",
+    "fromMemberName": "John Doe",
+    "isCurrentUser": false,
+    "message": "totam rem aperiam eaque ipsa"
   },
   {
-    "id": "115454541",
-    "senderId": "1",
-    "receiverId": "777",
-    "timeUnixTime": "2020-04-13T18:30:43.511Z",
-    "message": "Hey, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "id": 1255324882367890,
+    "objectId": 12345673453890,
+    "channelIdentifier": "12345678901234567890",
+    "sentTime": 1590173640,
+    "fromMember": "1",
+    "fromMemberName": "John Doe",
+    "isCurrentUser": true,
+    "message": "Quis aute"
   },
   {
-    "id": "2222",
-    "senderId": "777",
-    "receiverId": "1",
-    "timeUnixTime": "2020-02-15T18:26:43.511Z",
-    "message": "labore et dolore magna aliqua."
+    "id": 125537567567890,
+    "objectId": 12345673453890,
+    "channelIdentifier": "12345678901234567890",
+    "sentTime": 1590184640,
+    "fromMember": "1",
+    "fromMemberName": "John Doe",
+    "isCurrentUser": true,
+    "message": "eaque ipsa unde omnis iste natus error"
   },
   {
-    "id": "3333",
-    "senderId": "777",
-    "receiverId": "1",
-    "timeUnixTime": "2020-05-15T18:29:43.511Z",
-    "message": "ipsum adipiscing elit ipsum adipiscing elit"
-  },
-  {
-    "id": "444",
-    "senderId": "1",
-    "receiverId": "777",
-    "timeUnixTime": "2020-05-15T18:30:45.511Z",
-    "message": "consectetur adipiscing elit consectetur adipiscing elit consectetur adipiscing elit"
-  },
-  {
-    "id": "44434567564",
-    "senderId": "1",
-    "receiverId": "777",
-    "timeUnixTime": "2020-05-15T18:31:45.511Z",
-    "message": "Adipiscing elit!"
-  },
-  {
-    "id": "555",
-    "senderId": "777",
-    "receiverId": "1",
-    "timeUnixTime": "2020-05-15T18:49:43.511Z",
-    "message": "Lorem ipsum dolor sit amet"
-  },
-  {
-    "id": "5523423425",
-    "senderId": "777",
-    "receiverId": "1",
-    "timeUnixTime": "2020-05-15T18:49:43.511Z",
-    "message": "Lorem ipsum dolor sit amet consectetur adipiscing elit consectetur consectetur adipiscing elit consectetur consectetur adipiscing elit consectetur"
-  },
-  {
-    "id": "666",
-    "senderId": "1",
-    "receiverId": "777",
-    "timeUnixTime": "2020-05-15T18:50:45.511Z",
-    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit"
-  },
-  {
-    "id": "66666789786",
-    "senderId": "1",
-    "receiverId": "777",
-    "timeUnixTime": "2020-05-16T18:22:45.511Z",
-    "message": "How are you? Consectetur adipiscing elit"
-  },
-  {
-    "id": "666666",
-    "senderId": "1",
-    "receiverId": "777",
-    "timeUnixTime": "2020-05-17T18:50:45.511Z",
-    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit"
-  },
-  {
-    "id": "666666867866",
-    "senderId": "777",
-    "receiverId": "1",
-    "timeUnixTime": "2020-05-17T18:52:45.511Z",
-    "message": "Wow! Consectetur adipiscing"
-  },
-  {
-    "id": "66666686786233242344236",
-    "senderId": "777",
-    "receiverId": "1",
-    "timeUnixTime": "2020-05-17T18:53:45.511Z",
-    "message": "Wow! Adipiscing elit consectetur adipiscing ipsum dolor"
+    "id": 125537567456456567890,
+    "objectId": 12345673453890,
+    "channelIdentifier": "12345678901234567890",
+    "sentTime": 1590195640,
+    "fromMember": "333",
+    "fromMemberName": "John Doe",
+    "isCurrentUser": false,
+    "message": "Iste natus error"
   }
 ]

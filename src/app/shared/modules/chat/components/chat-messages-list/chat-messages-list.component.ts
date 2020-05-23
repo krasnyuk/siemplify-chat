@@ -1,7 +1,7 @@
-import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
-import {ChatMessagesQuery} from "../../state/chat-messages/chat-messages.query";
-import {Observable} from "rxjs";
-import {ChatMessagesGroup} from "../../state/chat-messages/chat-message.model";
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChatMessagesQuery} from '../../state/chat-messages/chat-messages.query';
+import {Observable} from 'rxjs';
+import {ChatMessagesGroupVM} from '../../models/chat-messages-group-vm.model';
 
 @Component({
   selector: 'app-chat-messages-list',
@@ -10,7 +10,7 @@ import {ChatMessagesGroup} from "../../state/chat-messages/chat-message.model";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChatMessagesListComponent implements OnInit {
-  messagesGroups$: Observable<Array<ChatMessagesGroup>> = this.chatMessagesQuery.messagesGroups$;
+  messagesGroups$: Observable<Array<ChatMessagesGroupVM>> = this.chatMessagesQuery.messagesGroups$;
 
   constructor(private chatMessagesQuery: ChatMessagesQuery) {
   }
@@ -18,7 +18,7 @@ export class ChatMessagesListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public trackByDate(index, group: ChatMessagesGroup) {
+  public trackByDate(index, group: ChatMessagesGroupVM) {
     return group.date.getTime();
   }
 
