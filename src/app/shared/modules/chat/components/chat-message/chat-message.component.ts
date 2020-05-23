@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {ChatChanelsQuery} from '../../state/chat-channels/chat-chanels.query';
+import {ChatChannelsQuery} from '../../state/chat-channels/chat-channels-query.service';
 import {SmpComponentSizes} from '@siemplify/ui';
 import {CurrentUserService} from '../../../../../core/services/current-user.service';
 import {ChatChannelMessageDM} from '../../models/chat-message.model';
@@ -33,7 +33,7 @@ export class ChatMessageComponent implements OnInit {
     return this.currentUserService.userName;
   }
 
-  constructor(private chatChanelsQuery: ChatChanelsQuery,
+  constructor(private chatChanelsQuery: ChatChannelsQuery,
               private currentUserService: CurrentUserService) {
   }
 

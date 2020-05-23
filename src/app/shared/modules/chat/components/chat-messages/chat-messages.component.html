@@ -3,6 +3,7 @@
     <p>Please select a chat to start messaging</p>
   </div>
   <div *ngIf="hasSelectedChannel$ | async" [@fadeInOut] class="messages-section">
+    <app-chat-selected-channel-info></app-chat-selected-channel-info>
     <app-chat-messages-list class="messages-section__list"></app-chat-messages-list>
     <app-chat-input-area class="messages-section__input-area"></app-chat-input-area>
   </div>

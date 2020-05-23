@@ -14,6 +14,7 @@ import {ChatMessagesListComponent} from './components/chat-messages-list/chat-me
 import {ChatMessagesGroupComponent} from './components/chat-messages-group/chat-messages-group.component';
 import {IsTodayPipe} from './pipes/is-today.pipe';
 import {ChatMessageComponent} from './components/chat-message/chat-message.component';
+import { ChatSelectedChannelInfoComponent } from './components/chat-selected-channel-info/chat-selected-channel-info.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import {ChatMessageComponent} from './components/chat-message/chat-message.compo
     ChatMessagesGroupComponent,
     IsTodayPipe,
     ChatMessageComponent,
+    ChatSelectedChannelInfoComponent,
   ],
   exports: [ChatComponent]
 })

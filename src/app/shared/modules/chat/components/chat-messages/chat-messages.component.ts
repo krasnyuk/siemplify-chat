@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {ChatChanelsQuery} from "../../state/chat-channels/chat-chanels.query";
+import {ChatChannelsQuery} from "../../state/chat-channels/chat-channels-query.service";
 import {combineLatest, Observable, timer} from "rxjs";
 import {fadeInOutAnimation} from "../../../../../core/animations/fade-in-out.animation";
 import {BaseUnsubscribe} from "../../../../../core/base/base-unsubscribe";
@@ -17,7 +17,7 @@ import {ChatMessagesService} from "../../state/chat-messages/chat-messages.servi
 export class ChatMessagesComponent extends BaseUnsubscribe implements OnInit {
   hasSelectedChannel$: Observable<boolean> = this.chatChanelsQuery.hasSelectedChannel$;
 
-  constructor(private chatChanelsQuery: ChatChanelsQuery, private chatMessagesService: ChatMessagesService) {
+  constructor(private chatChanelsQuery: ChatChannelsQuery, private chatMessagesService: ChatMessagesService) {
     super();
   }
 

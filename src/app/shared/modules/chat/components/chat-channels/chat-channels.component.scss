@@ -5,6 +5,7 @@
 }
 
 .channels-info {
+  position: relative;
   color: var(--text-secondary-color);
   padding-top: 12px;
   padding-left: 28px;
@@ -13,6 +14,12 @@
   &__count {
     font-weight: var(--weight-semibold);
     font-size: var(--size-heading-4);
+  }
+
+  &__add-channel {
+    position: absolute;
+    right: 14px;
+    top: 12px;
   }
 }
 

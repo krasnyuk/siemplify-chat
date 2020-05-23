@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {QueryEntity} from '@datorama/akita';
 import {ChatChannelsState, ChatChannelsStore} from './chat-channels.store';
-import {Observable} from "rxjs";
-import {map, switchMap} from "rxjs/operators";
-import {ChatChannelCardDM} from "../../models/chat-channel-card.model";
+import {Observable} from 'rxjs';
+import {map, switchMap} from 'rxjs/operators';
+import {ChatChannelCardDM} from '../../models/chat-channel-card.model';
 
 @Injectable({providedIn: 'root'})
-export class ChatChanelsQuery extends QueryEntity<ChatChannelsState> {
+export class ChatChannelsQuery extends QueryEntity<ChatChannelsState> {
   channelsIsLoading$: Observable<boolean>;
   channelsSearchFilter$: Observable<string>;
   channels$: Observable<Array<ChatChannelCardDM>>;

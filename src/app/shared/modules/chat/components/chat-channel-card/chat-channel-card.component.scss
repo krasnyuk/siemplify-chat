@@ -1,6 +1,6 @@
 .channel-card {
   border-radius: 2px;
-  padding: 10px 13px 7px 7px;
+  padding: 12px 8px 12px 7px;
   transition: background-color 0.2s ease-in-out;
   display: flex;
   justify-content: space-between;
@@ -20,46 +20,37 @@
     margin-right: 10px;
   }
 
-  &__role-avatar {
-    margin-right: 5px;
-  }
-
   &__user-name {
     font-weight: var(--weight-bold);
     font-size: var(--size-regular);
-    line-height: 13px;
     color: var(--text-primary-color);
-    margin-bottom: 3px;
+    margin-bottom: 10px;
   }
 
-  &__user-role {
+  &__last-message {
     color: var(--text-secondary-color);
-    font-size: 10px;
-    line-height: 14px;
-    display: flex;
-    align-items: center;
-  }
-
-  &__additional-info {
-    display: flex;
-    align-items: center;
+    font-size: var(--size-regular);
   }
 
   &__date-time {
     color: var(--text-secondary-color);
-    font-size: 10px;
+    font-size: var(--size-regular);
   }
 
   &__new-messages-indicator {
-    width: 4px;
-    height: 4px;
+    display: block;
+    margin-right: 0px;
+    width: 0;
+    height: 0;
     border-radius: 50%;
     background-color: transparent;
-    margin-left: 3px;
-    transition: background-color 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 
     &--has-new {
       background-color: var(--blue-500);
+      width: 8px;
+      height: 8px;
+      margin-right: 6px;
     }
   }
 }

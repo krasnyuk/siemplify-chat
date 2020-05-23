@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {ChatChanelsQuery} from '../../state/chat-channels/chat-chanels.query';
+import {ChatChannelsQuery} from '../../state/chat-channels/chat-channels-query.service';
 import {ChatChannelsService} from '../../state/chat-channels/chat-channels.service';
 import {takeUntil} from 'rxjs/operators';
 import {BaseUnsubscribe} from '../../../../../core/base/base-unsubscribe';
@@ -15,7 +15,7 @@ import {ChatChannelCardDM} from '../../models/chat-channel-card.model';
 export class ChatChannelsComponent extends BaseUnsubscribe implements OnInit {
   channels$: Observable<Array<ChatChannelCardDM>> = this.chatChanelsQuery.channels$;
 
-  constructor(private chatChanelsQuery: ChatChanelsQuery,
+  constructor(private chatChanelsQuery: ChatChannelsQuery,
               private chatChannelsService: ChatChannelsService) {
     super();
   }

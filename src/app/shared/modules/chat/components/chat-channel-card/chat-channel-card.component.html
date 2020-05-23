@@ -8,20 +8,14 @@
       <div class="channel-card__user-name">
         <smp-highlight [query]="channelsSearchFilter$ | async">{{chatChannel.title}}</smp-highlight>
       </div>
-      <div class="channel-card__user-role">
-        <smp-avatar class="channel-card__role-avatar avatar-squared" [size]="avatarSize.Xsmall"
-                    [name]="chatChannel.roleName"
-                    [backgroundColor]="chatChannel.roleColor"
-                    showInitials></smp-avatar>
-        <span>{{chatChannel.roleName}}</span>
+      <div class="channel-card__last-message d-flex d-flex-align--center">
+        <span class="channel-card__new-messages-indicator"
+              [class.channel-card__new-messages-indicator--has-new]="chatChannel.hasNewMessages"></span>
+        <span>{{chatChannel.lastMessage}}</span>
       </div>
     </div>
   </div>
-  <div class="channel-card__additional-info">
-    <span class="channel-card__date-time">
-      {{chatChannel.lastViewTimeOfChannel | date : 'EEE hh:mm a'}}
-    </span>
-    <span class="channel-card__new-messages-indicator"
-          [class.channel-card__new-messages-indicator--has-new]="chatChannel.hasNewMessages"></span>
+  <div class="channel-card__date-time d-flex d-flex-align--center">
+    {{chatChannel.lastViewTimeOfChannel | date : 'EEE hh:mm a'}}
   </div>
 </div>

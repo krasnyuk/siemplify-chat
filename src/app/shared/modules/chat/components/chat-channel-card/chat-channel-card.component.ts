@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {SmpComponentSizes} from '@siemplify/ui';
-import {ChatChanelsQuery} from '../../state/chat-channels/chat-chanels.query';
+import {ChatChannelsQuery} from '../../state/chat-channels/chat-channels-query.service';
 import {Observable} from 'rxjs';
 import {ChatChannelsService} from '../../state/chat-channels/chat-channels.service';
 import {ChatChannelCardDM} from '../../models/chat-channel-card.model';
@@ -18,7 +18,7 @@ export class ChatChannelCardComponent implements OnInit {
 
   @Input() chatChannel: ChatChannelCardDM;
 
-  constructor(private chatChanelsQuery: ChatChanelsQuery,
+  constructor(private chatChanelsQuery: ChatChannelsQuery,
               private chatChannelsService: ChatChannelsService) {
   }
 
