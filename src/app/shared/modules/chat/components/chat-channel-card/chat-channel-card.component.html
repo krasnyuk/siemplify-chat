@@ -1,0 +1,27 @@
+<div *ngIf="chatChannel" (click)="setSelectedChannel()" class="channel-card u-cursor u-cursor--pointer"
+     [class.channel-card--selected]="(selectedChannelId$ | async) === chatChannel.channelIdentifier">
+  <div class="channel-card__main-info">
+    <smp-avatar class="channel-card__avatar" [size]="avatarSize.Small" [name]="chatChannel.title"
+                [image]="chatChannel.imageBase64 || undefined"
+                showInitials></smp-avatar>
+    <div class="channel-card__user-info-container">
+      <div class="channel-card__user-name">
+        <smp-highlight [query]="channelsSearchFilter$ | async">{{chatChannel.title}}</smp-highlight>
+      </div>
+      <div class="channel-card__user-role">
+        <smp-avatar class="channel-card__role-avatar avatar-squared" [size]="avatarSize.Xsmall"
+                    [name]="chatChannel.roleName"
+                    [backgroundColor]="chatChannel.roleColor"
+                    showInitials></smp-avatar>
+        <span>{{chatChannel.roleName}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="channel-card__additional-info">
+    <span class="channel-card__date-time">
+      {{chatChannel.lastViewTimeOfChannel | date : 'EEE hh:mm a'}}
+    </span>
+    <span class="channel-card__new-messages-indicator"
+          [class.channel-card__new-messages-indicator--has-new]="chatChannel.hasNewMessages"></span>
+  </div>
+</div>

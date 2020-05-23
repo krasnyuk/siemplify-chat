@@ -6,9 +6,9 @@ import {SmpActionsModule, SmpAvatarModule, SmpDialogComponentsModule, SmpHighlig
 import {OverlayContainer} from "@angular/cdk/overlay";
 import {ChatMessagesComponent} from './components/chat-messages/chat-messages.component';
 import {ChatInputAreaComponent} from './components/chat-input-area/chat-input-area.component';
-import {ChatParticipantCardComponent} from './components/chat-participant-card/chat-participant-card.component';
-import {ChatParticipantsComponent} from './components/chat-participants/chat-participants.component';
-import {ChatParticipantsSearchComponent} from './components/chat-participants-search/chat-participants-search.component';
+import {ChatChannelCardComponent} from './components/chat-channel-card/chat-channel-card.component';
+import {ChatChannelsComponent} from './components/chat-channels/chat-channels.component';
+import {ChatChannelsSearchComponent} from './components/chat-channels-search/chat-channels-search.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {ChatMessagesListComponent} from './components/chat-messages-list/chat-messages-list.component';
 import {ChatMessagesGroupComponent} from './components/chat-messages-group/chat-messages-group.component';
@@ -30,9 +30,9 @@ import { ChatMessageComponent } from './components/chat-message/chat-message.com
     ChatDialogComponent,
     ChatMessagesComponent,
     ChatInputAreaComponent,
-    ChatParticipantCardComponent,
-    ChatParticipantsComponent,
-    ChatParticipantsSearchComponent,
+    ChatChannelCardComponent,
+    ChatChannelsComponent,
+    ChatChannelsSearchComponent,
     ChatMessagesListComponent,
     ChatMessagesGroupComponent,
     IsTodayPipe,

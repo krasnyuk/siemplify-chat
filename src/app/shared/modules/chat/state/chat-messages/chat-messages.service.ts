@@ -3,8 +3,7 @@ import {ChatMessagesStore} from './chat-messages.store';
 import {HttpClient} from "@angular/common/http";
 import {API_URL} from "../../../../../core/tokens/api-url.token";
 import {EMPTY, Observable} from "rxjs";
-import {ChatParticipant} from "../chat-participant/chat-participant.model";
-import {catchError, delay, map, tap} from "rxjs/operators";
+import {catchError, delay} from "rxjs/operators";
 import {guid, withTransaction} from "@datorama/akita";
 import {ChatMessage} from "./chat-message.model";
 

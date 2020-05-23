@@ -1,8 +1,8 @@
 <div class="messages-section-container">
-  <div *ngIf="!(hasSelectedParticipant$ | async)" [@fadeInOut] class="blank-message-container">
+  <div *ngIf="!(hasSelectedChannel$ | async)" [@fadeInOut] class="blank-message-container">
     <p>Please select a chat to start messaging</p>
   </div>
-  <div *ngIf="hasSelectedParticipant$ | async" [@fadeInOut] class="messages-section">
+  <div *ngIf="hasSelectedChannel$ | async" [@fadeInOut] class="messages-section">
     <app-chat-messages-list class="messages-section__list"></app-chat-messages-list>
     <app-chat-input-area class="messages-section__input-area"></app-chat-input-area>
   </div>

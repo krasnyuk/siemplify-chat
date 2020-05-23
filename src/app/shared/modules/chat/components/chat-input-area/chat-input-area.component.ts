@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {FormControl, Validators} from "@angular/forms";
-import {ChatMessagesService} from "../../state/chat-messages/chat-messages.service";
-import {takeUntil} from "rxjs/operators";
-import {BaseUnsubscribe} from "../../../../../core/base/base-unsubscribe";
+import {FormControl, Validators} from '@angular/forms';
+import {ChatMessagesService} from '../../state/chat-messages/chat-messages.service';
+import {takeUntil} from 'rxjs/operators';
+import {BaseUnsubscribe} from '../../../../../core/base/base-unsubscribe';
 
 @Component({
   selector: 'app-chat-input-area',

@@ -1,0 +1,63 @@
+
+[
+  {
+    "objectId": 1223453433333,
+    "channelIdentifier": "23423446456423",
+    "hasNewMessages": true,
+    "type": 0,
+    "title": "John Smith",
+    "imageBase64": "https://lh3.googleusercontent.com/proxy/irukJRT2XtDmdrbHHmmw2K2DahsPgYaz-fBdxifUA9a6H-mijdQVlN4FW2uELqUQ_lteXivp-eo-0XZZ81D4lEeF",
+    "roleName": "Back-end Developer",
+    "roleColor": "blue",
+    "groupAdminMember": null,
+    "groupMembers": [],
+    "lastMessage": "Good job!",
+    "lastViewTimeOfChannel": 1590334445348,
+    "additionalInfo": "Some additional info"
+  },
+  {
+    "objectId": 12233333,
+    "channelIdentifier": "23423423",
+    "hasNewMessages": true,
+    "type": 0,
+    "title": "Artem Krasniuk",
+    "imageBase64": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+    "roleName": "Front-end Developer",
+    "roleColor": "red",
+    "groupAdminMember": null,
+    "groupMembers": [],
+    "lastMessage": "Wow! Amazing!",
+    "lastViewTimeOfChannel": 1590245348,
+    "additionalInfo": "Some additional info"
+  },
+  {
+    "objectId": 12435345233333,
+    "channelIdentifier": "234464567888823423",
+    "hasNewMessages": false,
+    "type": 0,
+    "title": "Dr. Dre",
+    "imageBase64": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNRA4RhAAdKsF9mY3bjb1x7J8XOkDUn2OqBuImhNPN7OnR8Pnr&usqp=CAU",
+    "roleName": "Manager",
+    "roleColor": "rgb(253, 135, 225)",
+    "groupAdminMember": null,
+    "groupMembers": [],
+    "lastMessage": "Not bad",
+    "lastViewTimeOfChannel": 1590245348,
+    "additionalInfo": "Some additional info"
+  },
+  {
+    "objectId": 1243534453333225233333,
+    "channelIdentifier": "234464563gdfgd7888823423",
+    "hasNewMessages": true,
+    "type": 0,
+    "title": "Andrew",
+    "imageBase64": "",
+    "roleName": "UI/UX",
+    "roleColor": "orange",
+    "groupAdminMember": null,
+    "groupMembers": [],
+    "lastMessage": "It works!",
+    "lastViewTimeOfChannel": 15903245348,
+    "additionalInfo": "Some additional info"
+  }
+]

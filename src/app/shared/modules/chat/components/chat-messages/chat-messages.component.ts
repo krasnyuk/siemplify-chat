@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {ChatParticipantsQuery} from "../../state/chat-participant/chat-participants.query";
+import {ChatChanelsQuery} from "../../state/chat-channels/chat-chanels.query";
 import {combineLatest, Observable, timer} from "rxjs";
 import {fadeInOutAnimation} from "../../../../../core/animations/fade-in-out.animation";
 import {BaseUnsubscribe} from "../../../../../core/base/base-unsubscribe";
@@ -15,9 +15,9 @@ import {ChatMessagesService} from "../../state/chat-messages/chat-messages.servi
   animations: [fadeInOutAnimation()]
 })
 export class ChatMessagesComponent extends BaseUnsubscribe implements OnInit {
-  hasSelectedParticipant$: Observable<boolean> = this.chatParticipantsQuery.hasSelectedParticipant$;
+  hasSelectedChannel$: Observable<boolean> = this.chatChanelsQuery.hasSelectedChannel$;
 
-  constructor(private chatParticipantsQuery: ChatParticipantsQuery, private chatMessagesService: ChatMessagesService) {
+  constructor(private chatChanelsQuery: ChatChanelsQuery, private chatMessagesService: ChatMessagesService) {
     super();
   }
 
@@ -26,7 +26,7 @@ export class ChatMessagesComponent extends BaseUnsubscribe implements OnInit {
   }
 
   private loadMessagesForSelectedParticipant() {
-    const selectedParticipantId$ = this.chatParticipantsQuery.selectedParticipantId$.pipe(
+    const selectedParticipantId$ = this.chatChanelsQuery.selectedChannelId$.pipe(
       filter((selectedParticipantId: string | null) => selectedParticipantId !== null)
     );
     const pollingInterval$ = timer(0, POLLING_INTERVAL);

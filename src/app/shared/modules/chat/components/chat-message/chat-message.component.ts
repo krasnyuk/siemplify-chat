@@ -1,6 +1,6 @@
 import {Component, OnInit, ChangeDetectionStrategy, Input} from '@angular/core';
 import {ChatMessage} from "../../state/chat-messages/chat-message.model";
-import {ChatParticipantsQuery} from "../../state/chat-participant/chat-participants.query";
+import {ChatChanelsQuery} from "../../state/chat-channels/chat-chanels.query";
 import {SmpComponentSizes} from "@siemplify/ui";
 import {CurrentUserService} from "../../../../../core/services/current-user.service";
 
@@ -11,7 +11,7 @@ import {CurrentUserService} from "../../../../../core/services/current-user.serv
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChatMessageComponent implements OnInit {
-  public selectedParticipant$ = this.chatParticipantsQuery.selectedParticipant$;
+  public selectedParticipant$ = this.chatChanelsQuery.selectedChannel$;
   readonly avatarSize = SmpComponentSizes;
 
   @Input() message: ChatMessage;
@@ -31,7 +31,7 @@ export class ChatMessageComponent implements OnInit {
     return this.currentUserService.userName;
   }
 
-  constructor(private chatParticipantsQuery: ChatParticipantsQuery,
+  constructor(private chatChanelsQuery: ChatChanelsQuery,
               private currentUserService: CurrentUserService) {
   }
 

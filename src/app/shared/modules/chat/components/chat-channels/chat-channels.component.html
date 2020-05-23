@@ -1,0 +1,7 @@
+<div class="channels-container">
+  <app-chat-channels-search></app-chat-channels-search>
+  <div *ngIf="channels$ | async as channels" class="chat-channels">
+    <app-chat-channel-card *ngFor="let channel of channels; trackBy: trackById"
+                           [chatChannel]="channel"></app-chat-channel-card>
+  </div>
+</div>

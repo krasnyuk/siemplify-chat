@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {SmpDialogRef} from "@siemplify/ui";
+import {SmpDialogRef} from '@siemplify/ui';
 
 @Component({
   selector: 'app-chat-dialog',
