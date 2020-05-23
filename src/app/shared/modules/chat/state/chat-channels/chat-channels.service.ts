@@ -8,13 +8,12 @@ import {API_URL} from '../../../../../core/tokens/api-url.token';
 import {withTransaction} from '@datorama/akita';
 import {POLLING_INTERVAL} from '../../../../../core/constants';
 import {ChatChannelCardDM} from '../../models/chat-channel-card.model';
+import {ChatDataService} from '../../models/chat-data-service.model';
 
 @Injectable({providedIn: 'root'})
 export class ChatChannelsService {
 
-  constructor(private chatChannelsStore: ChatChannelsStore,
-              private http: HttpClient,
-              @Inject(API_URL) private apiUrl: string) {
+  constructor(private chatDataService: ChatDataService, private chatChannelsStore: ChatChannelsStore) {
   }
 
   public getChannelsWithInterval(interval: number = POLLING_INTERVAL): Observable<Array<ChatChannelCardDM>> {
@@ -25,7 +24,7 @@ export class ChatChannelsService {
 
   private getChatChannels(): Observable<Array<ChatChannelCardDM>> {
     this.chatChannelsStore.setLoading(true);
-    return this.http.get<Array<ChatChannelCardDM>>(this.apiUrl + 'chat-channels.json').pipe(
+    return this.chatDataService.getChatChannels('mocked').pipe(
       // TODO: delete emulated response time
       delay(100),
       // TODO: delete - emulates hasNewMessages changes for polling demo

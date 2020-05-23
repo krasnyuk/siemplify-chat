@@ -43,10 +43,20 @@
     "id": 125537567456456567890,
     "objectId": 12345673453890,
     "channelIdentifier": "12345678901234567890",
-    "sentTime": 1590195640,
+    "sentTime": 1591195640,
     "fromMember": "333",
     "fromMemberName": "John Doe",
     "isCurrentUser": false,
     "message": "Iste natus error"
+  },
+  {
+    "id": 1255375676666567890,
+    "objectId": 12345673453890,
+    "channelIdentifier": "12345678901234567890",
+    "sentTime": 1591195640,
+    "fromMember": "1",
+    "fromMemberName": "John Doe",
+    "isCurrentUser": true,
+    "message": "Ieaque ipsa"
   }
 ]

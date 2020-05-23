@@ -9,6 +9,8 @@ import {AkitaNgDevtools} from '@datorama/akita-ngdevtools';
 import {environment} from '../environments/environment';
 import {SmpAvatarModule, SmpDialogModule, SmpOverlayModule} from "@siemplify/ui";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ChatDataService} from './shared/modules/chat/models/chat-data-service.model';
+import {WarRoomDataService} from './core/services/war-room-data.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,12 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    ChatModule,
+    ChatModule.withProviders([
+      {
+        provide: ChatDataService,
+        useClass: WarRoomDataService
+      }
+    ]),
     environment.production ? [] : AkitaNgDevtools,
     SmpDialogModule.forRoot(),
     SmpOverlayModule.forRoot(),
