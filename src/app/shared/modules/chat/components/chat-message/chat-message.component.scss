@@ -2,19 +2,14 @@
   display: block;
 }
 
-$message-side-offset: 36px;
-
 .chat-message {
   margin-bottom: 6px;
   display: flex;
   justify-content: flex-start;
-  padding-left: $message-side-offset;
   position: relative;
 
   &--mine {
     justify-content: flex-end;
-    padding-left: 0;
-    padding-right: $message-side-offset;
   }
 
   &--offset-top {
@@ -40,32 +35,16 @@ $message-side-offset: 36px;
     }
   }
 
-  &__avatar-container {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: $message-side-offset;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .chat-message--mine & {
-      left: unset;
-      right: 0;
-    }
-  }
-
   &__time {
     position: absolute;
     top: calc(100% + 7px);
-    left: $message-side-offset;
+    left: 0;
     color: var(--text-secondary-color);
     font-size: 10px;
 
     .chat-message--mine & {
       left: unset;
-      right: $message-side-offset;
+      right: 0;
     }
   }
 }

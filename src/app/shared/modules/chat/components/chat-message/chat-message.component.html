@@ -5,13 +5,6 @@
      'chat-message--offset-top': (!senderSameAsPrevious && isMine && !isFirst),
      'chat-message--offset-bottom': (!senderSameAsNext && isMine)
      }">
-  <div *ngIf="!senderSameAsPrevious" class="chat-message__avatar-container">
-    <smp-avatar *ngIf="selectedChannel$ | async as selectedChannel"
-                [size]="avatarSize.Xsmall"
-                [name]="isMine ? currentUserName : selectedChannel.title"
-                [image]="isMine ? currentUserImage : (selectedChannel.imageBase64 || undefined)"
-                showInitials></smp-avatar>
-  </div>
   <div class="chat-message__content">{{message.message}}</div>
   <div *ngIf="!senderSameAsNext" class="chat-message__time">{{message.sentTime | date: 'h:mm a'}}</div>
 </div>

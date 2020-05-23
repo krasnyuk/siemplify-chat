@@ -1,14 +1,17 @@
 <section *ngIf="selectedChannel$ | async as selectedChannel" class="selected-chat-channel">
-  <smp-avatar class="selected-chat-channel__avatar" [size]="avatarSize.Small" [name]="selectedChannel.title"
-              [image]="selectedChannel.imageBase64 || undefined" showInitials></smp-avatar>
-  <div class="d-flex-column">
-    <div class="selected-chat-channel__title">{{selectedChannel.title}}</div>
-    <div class="d-flex d-flex-align--center">
-      <smp-avatar class="selected-chat-channel__role-avatar avatar-squared" [size]="avatarSize.Xsmall"
-                  [name]="selectedChannel.roleName"
-                  [backgroundColor]="selectedChannel.roleColor"
-                  showInitials></smp-avatar>
-      <span class="selected-chat-channel__role">{{selectedChannel.roleName}}</span>
+  <div class="d-flex d-flex-align--center">
+    <smp-avatar class="selected-chat-channel__avatar" [size]="avatarSize.Small" [name]="selectedChannel.title"
+                [image]="selectedChannel.imageBase64 || undefined" showInitials></smp-avatar>
+    <div class="d-flex-column">
+      <div class="selected-chat-channel__title">{{selectedChannel.title}}</div>
+      <div class="d-flex d-flex-align--center">
+        <smp-avatar class="selected-chat-channel__role-avatar avatar-squared" [size]="avatarSize.Xsmall"
+                    [name]="selectedChannel.roleName"
+                    [backgroundColor]="selectedChannel.roleColor"
+                    showInitials></smp-avatar>
+        <span class="selected-chat-channel__role">{{selectedChannel.roleName}}</span>
+      </div>
     </div>
   </div>
+  <smp-action [icon]="{ name: 'search', pack: 'smp-components' }"></smp-action>
 </section>
