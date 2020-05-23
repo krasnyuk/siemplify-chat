@@ -4,9 +4,22 @@
   height: 100%;
 }
 
+.channels-info {
+  color: var(--text-secondary-color);
+  padding-top: 12px;
+  padding-left: 28px;
+  padding-right: 14px;
+
+  &__count {
+    font-weight: var(--weight-semibold);
+    font-size: var(--size-heading-4);
+  }
+}
+
 .chat-channels {
   flex: 1 1 auto;
   overflow-y: auto;
   height: 0; // The element will have height because flexbox recalculates it unless you want a min-height
   position: relative;
+  padding-left: 21px;
 }

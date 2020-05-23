@@ -3,12 +3,12 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {ChatModule} from "./shared/modules/chat/chat.module";
-import {HttpClientModule} from "@angular/common/http";
+import {ChatModule} from './shared/modules/chat/chat.module';
+import {HttpClientModule} from '@angular/common/http';
 import {AkitaNgDevtools} from '@datorama/akita-ngdevtools';
 import {environment} from '../environments/environment';
-import {SmpAvatarModule, SmpDialogModule, SmpOverlayModule} from "@siemplify/ui";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {SmpAvatarModule, SmpDialogModule, SmpOverlayModule} from '@siemplify/ui';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ChatDataService} from './shared/modules/chat/models/chat-data-service.model';
 import {WarRoomDataService} from './core/services/war-room-data.service';
 

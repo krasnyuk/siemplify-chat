@@ -1,6 +1,13 @@
-<div class="channels-container">
+<div *ngIf="channels$ | async as channels" class="channels-container">
+  <div class="channels-info d-flex d-flex-justify--space-between d-flex-align--center">
+    <span class="channels-info__count">
+      {{channels.length}} Conversations
+    </span>
+    <!--TODO: use icon from lib-->
+    <smp-action [icon]="{ name: 'search', pack: 'smp-components' }"></smp-action>
+  </div>
   <app-chat-channels-search></app-chat-channels-search>
-  <div *ngIf="channels$ | async as channels" class="chat-channels">
+  <div class="chat-channels">
     <app-chat-channel-card *ngFor="let channel of channels; trackBy: trackById"
                            [chatChannel]="channel"></app-chat-channel-card>
   </div>

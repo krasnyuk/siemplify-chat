@@ -1,11 +1,11 @@
 .channel-card {
   border-radius: 2px;
-  padding: 10px 13px 7px 11px;
+  padding: 10px 13px 7px 7px;
   transition: background-color 0.2s ease-in-out;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 12px;
+  margin-right: 22px;
 
   &:hover, &--selected {
     background-color: var(--bg-weight-500);

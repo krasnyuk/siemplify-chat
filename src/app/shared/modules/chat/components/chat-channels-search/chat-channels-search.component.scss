@@ -1,12 +1,11 @@
 .channels-search-input-container {
   position: relative;
-  margin-bottom: 13px;
-  margin-top: 27px;
-  padding-right: 12px;
+  margin-bottom: 16px;
+  margin-top: 17px;
 
   .input-action {
     position: absolute;
-    left: 8px;
+    left: 25px;
     top: 6px;
   }
 
@@ -15,7 +14,7 @@
     border: none;
     border-bottom: 1px solid var(--bg-weight-400);
     width: 100%;
-    padding: 6px 6px 6px 30px;
+    padding: 6px 6px 6px 47px;
     font-size: var(--size-regular);
     color: var(--text-secondary-color);
   }
