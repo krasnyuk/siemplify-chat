@@ -3,15 +3,15 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  OnInit, QueryList,
+  OnDestroy,
+  QueryList,
   ViewChild,
   ViewChildren
 } from '@angular/core';
 import {ChatMessagesQuery} from '../../state/chat-messages/chat-messages.query';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {ChatMessagesGroupVM} from '../../models/chat-messages-group-vm.model';
 import {ChatMessagesGroupComponent} from '../chat-messages-group/chat-messages-group.component';
-import {BaseUnsubscribe} from '../../../../../core/base/base-unsubscribe';
 import {takeUntil, tap} from 'rxjs/operators';
 
 @Component({
@@ -20,21 +20,22 @@ import {takeUntil, tap} from 'rxjs/operators';
   styleUrls: ['./chat-messages-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ChatMessagesListComponent extends BaseUnsubscribe implements OnInit, AfterViewInit {
+export class ChatMessagesListComponent implements AfterViewInit, OnDestroy {
   @ViewChild('messagesContainer') private messagesContainer: ElementRef;
   @ViewChildren(ChatMessagesGroupComponent) private messagesGroups: QueryList<ChatMessagesGroupComponent>;
 
   messagesGroups$: Observable<Array<ChatMessagesGroupVM>> = this.chatMessagesQuery.messagesGroups$;
+  private componentDestroyed = new Subject();
 
   constructor(private chatMessagesQuery: ChatMessagesQuery) {
-    super();
-  }
-
-  ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
     this.scrollToBottomOnMessagesChanges();
+  }
+
+  ngOnDestroy(): void {
+    this.componentDestroyed.next();
   }
 
   public trackByDate(index, group: ChatMessagesGroupVM) {
@@ -44,7 +45,7 @@ export class ChatMessagesListComponent extends BaseUnsubscribe implements OnInit
   private scrollToBottomOnMessagesChanges() {
     this.messagesGroups.changes.pipe(
       tap(() => this.messagesContainer.nativeElement.scrollTop = this.messagesContainer.nativeElement.scrollHeight),
-      takeUntil(this.componentDestroyed$)
+      takeUntil(this.componentDestroyed)
     ).subscribe();
   }
 

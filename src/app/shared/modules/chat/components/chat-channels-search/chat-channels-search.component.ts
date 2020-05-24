@@ -1,9 +1,9 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {ChatChannelsService} from '../../state/chat-channels/chat-channels.service';
 import {FormControl} from '@angular/forms';
 import {SmpComponentSizes} from '@siemplify/ui';
-import {BaseUnsubscribe} from '../../../../../core/base/base-unsubscribe';
 import {takeUntil, tap} from 'rxjs/operators';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-chat-channels-search',
@@ -11,23 +11,27 @@ import {takeUntil, tap} from 'rxjs/operators';
   styleUrls: ['./chat-channels-search.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ChatChannelsSearchComponent extends BaseUnsubscribe implements OnInit {
-  public searchControl = new FormControl(null);
-  public readonly searchIcon = { name: 'search', pack: 'smp-components' };
-  public actionSize = SmpComponentSizes;
+export class ChatChannelsSearchComponent implements OnInit, OnDestroy {
+  searchControl = new FormControl(null);
+  readonly searchIcon = {name: 'search', pack: 'smp-components'};
+  readonly actionSize = SmpComponentSizes;
+  private componentDestroyed = new Subject();
 
   constructor(private chatChannelsService: ChatChannelsService) {
-    super();
   }
 
   ngOnInit(): void {
     this.updateChatChannelsSearchFilter();
   }
 
+  ngOnDestroy(): void {
+    this.componentDestroyed.next();
+  }
+
   private updateChatChannelsSearchFilter() {
     this.searchControl.valueChanges.pipe(
       tap((searchValue: string) => this.chatChannelsService.updateChannelsSearchFilter(searchValue)),
-      takeUntil(this.componentDestroyed$)
+      takeUntil(this.componentDestroyed)
     ).subscribe();
   }
 }

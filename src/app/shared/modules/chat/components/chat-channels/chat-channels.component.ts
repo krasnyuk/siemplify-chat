@@ -1,9 +1,8 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
+import {Observable, Subject} from 'rxjs';
 import {ChatChannelsQuery} from '../../state/chat-channels/chat-channels-query.service';
 import {ChatChannelsService} from '../../state/chat-channels/chat-channels.service';
 import {takeUntil} from 'rxjs/operators';
-import {BaseUnsubscribe} from '../../../../../core/base/base-unsubscribe';
 import {ChatChannelCardDM} from '../../models/chat-channel-card.model';
 
 @Component({
@@ -12,16 +11,20 @@ import {ChatChannelCardDM} from '../../models/chat-channel-card.model';
   styleUrls: ['./chat-channels.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ChatChannelsComponent extends BaseUnsubscribe implements OnInit {
+export class ChatChannelsComponent implements OnInit, OnDestroy {
   channels$: Observable<Array<ChatChannelCardDM>> = this.chatChanelsQuery.channels$;
+  private componentDestroyed = new Subject();
 
   constructor(private chatChanelsQuery: ChatChannelsQuery,
               private chatChannelsService: ChatChannelsService) {
-    super();
   }
 
   ngOnInit(): void {
     this.loadChannels();
+  }
+
+  ngOnDestroy(): void {
+    this.componentDestroyed.next();
   }
 
   public trackById(index: number, item: ChatChannelCardDM) {
@@ -30,7 +33,7 @@ export class ChatChannelsComponent extends BaseUnsubscribe implements OnInit {
 
   private loadChannels() {
     this.chatChannelsService.getChannelsWithInterval().pipe(
-      takeUntil(this.componentDestroyed$)
+      takeUntil(this.componentDestroyed)
     ).subscribe();
   }
 }
