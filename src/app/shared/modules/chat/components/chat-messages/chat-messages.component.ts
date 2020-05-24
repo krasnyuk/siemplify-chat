@@ -1,11 +1,11 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {ChatChannelsQuery} from "../../state/chat-channels/chat-channels-query.service";
-import {combineLatest, Observable, timer} from "rxjs";
-import {fadeInOutAnimation} from "../../../../../core/animations/fade-in-out.animation";
-import {BaseUnsubscribe} from "../../../../../core/base/base-unsubscribe";
-import {filter, switchMap, takeUntil, tap} from "rxjs/operators";
-import {POLLING_INTERVAL} from "../../../../../core/constants";
-import {ChatMessagesService} from "../../state/chat-messages/chat-messages.service";
+import {ChatChannelsQuery} from '../../state/chat-channels/chat-channels-query.service';
+import {combineLatest, Observable, timer} from 'rxjs';
+import {fadeInOutAnimation} from '../../../../../core/animations/fade-in-out.animation';
+import {BaseUnsubscribe} from '../../../../../core/base/base-unsubscribe';
+import {filter, switchMap, takeUntil} from 'rxjs/operators';
+import {POLLING_INTERVAL} from '../../../../../core/constants';
+import {ChatMessagesService} from '../../state/chat-messages/chat-messages.service';
 
 @Component({
   selector: 'app-chat-messages',

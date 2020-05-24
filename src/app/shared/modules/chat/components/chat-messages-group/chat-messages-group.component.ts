@@ -2,8 +2,6 @@ import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {ChatMessagesGroupVM} from '../../models/chat-messages-group-vm.model';
 import {ChatChannelMessageDM} from '../../models/chat-message.model';
 import {Observable} from 'rxjs';
-import {ChatChannelCardDM} from '../../models/chat-channel-card.model';
-import {ChatChannelsQuery} from '../../state/chat-channels/chat-channels-query.service';
 import {ChatMessagesQuery} from '../../state/chat-messages/chat-messages.query';
 
 @Component({
