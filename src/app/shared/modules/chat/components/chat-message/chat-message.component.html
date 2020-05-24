@@ -1,11 +1,4 @@
-<div *ngIf="message" class="chat-message"
-     [ngClass]="{
-     'chat-message--first': isFirst,
-     'chat-message--mine': isMine,
-     'chat-message--offset-top': (!senderSameAsPrevious && isMine && !isFirst),
-     'chat-message--offset-bottom': (!senderSameAsNext && isMine),
-     'chat-message--is-first-unread': isFirstUnread
-     }">
+<div *ngIf="message" class="chat-message" [ngClass]="messageClasses">
   <div class="chat-message__unread-info" *ngIf="isFirstUnread">
     <span class="line-divider"></span>
     <span class="unread-messages-label">{{unreadMessagesCount}} New Message</span>

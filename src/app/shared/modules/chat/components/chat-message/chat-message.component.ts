@@ -19,7 +19,14 @@ export class ChatMessageComponent {
   @Input() isFirstUnread: boolean;
   @Input() unreadMessagesCount: boolean;
 
-  get isMine(): boolean {
-    return this.message?.isCurrentUser;
+  get messageClasses() {
+    return {
+      'chat-message--first': this.isFirst,
+      'chat-message--mine': this.message.isCurrentUser,
+      'chat-message--offset-top': (!this.senderSameAsPrevious && this.message.isCurrentUser && !this.isFirst),
+      'chat-message--offset-bottom': (!this.senderSameAsNext && this.message.isCurrentUser),
+      'chat-message--is-first-unread': this.isFirstUnread
+    };
   }
+
 }
