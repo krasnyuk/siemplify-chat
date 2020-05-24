@@ -4,16 +4,3 @@
 
 @include smp-install-theme();
 
-
-/** Overrides for lib components - global styles. TODO: Move to separate folder */
-
-/* Colored dialog overrides */
-
-.simp-avatar {
-  &.avatar-squared {
-    .user-image {
-      border-radius: 3px;
-    }
-  }
-}
-

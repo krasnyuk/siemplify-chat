@@ -18,6 +18,12 @@
 
   &__role-avatar {
     margin-right: 8px;
+
+    &.simp-avatar {
+      .user-image {
+        border-radius: 3px;
+      }
+    }
   }
 
   &__role {
