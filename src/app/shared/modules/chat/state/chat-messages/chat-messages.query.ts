@@ -12,7 +12,7 @@ import {ChatChannelCardDM} from '../../models/chat-channel-card.model';
 export class ChatMessagesQuery extends QueryEntity<ChatMessagesState> {
   messages$: Observable<Array<ChatChannelMessageDM>>;
   messagesGroups$: Observable<Array<ChatMessagesGroupVM>>;
-  firstUnreadMessageId$: Observable<number>;
+  firstUnreadMessageId$: Observable<number | null>;
   unreadMessagesCount$: Observable<number>;
 
   constructor(protected store: ChatMessagesStore, private chatChannelsQuery: ChatChannelsQuery) {
@@ -48,7 +48,7 @@ export class ChatMessagesQuery extends QueryEntity<ChatMessagesState> {
     );
   }
 
-  private getFirstUnreadMessageId(): Observable<number> {
+  private getFirstUnreadMessageId(): Observable<number | null> {
     return this.chatChannelsQuery.selectedChannel$.pipe(
       filter(Boolean),
       switchMap((selectedChannel: ChatChannelCardDM) => {
@@ -57,7 +57,10 @@ export class ChatMessagesQuery extends QueryEntity<ChatMessagesState> {
             const firstUnreadMessage: ChatChannelMessageDM | undefined = messages.find((message: ChatChannelMessageDM) => {
               return message.sentTime > selectedChannel.lastViewTimeOfChannel;
             });
-            return firstUnreadMessage?.id;
+            if (!firstUnreadMessage) {
+              return null;
+            }
+            return firstUnreadMessage.id;
           })
         );
       }),

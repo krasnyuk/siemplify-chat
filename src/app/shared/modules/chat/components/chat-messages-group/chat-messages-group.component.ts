@@ -14,7 +14,7 @@ import {ChatMessagesQuery} from '../../state/chat-messages/chat-messages.query';
 export class ChatMessagesGroupComponent implements OnInit {
   @Input() messagesGroup: ChatMessagesGroupVM;
 
-  firstUnreadMessageId$: Observable<number> = this.chatMessagesQuery.firstUnreadMessageId$;
+  firstUnreadMessageId$: Observable<number | null> = this.chatMessagesQuery.firstUnreadMessageId$;
   unreadMessagesCount$: Observable<number> = this.chatMessagesQuery.unreadMessagesCount$;
 
   constructor(private chatMessagesQuery: ChatMessagesQuery) {
