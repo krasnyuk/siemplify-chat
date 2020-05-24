@@ -1,12 +1,8 @@
-import {HttpClient} from '@angular/common/http';
-import {Inject, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {delay, map, switchMap} from 'rxjs/operators';
 import {ChatChannelsStore} from './chat-channels.store';
 import {Observable, timer} from 'rxjs';
-
-import {API_URL} from '../../../../../core/tokens/api-url.token';
 import {withTransaction} from '@datorama/akita';
-import {POLLING_INTERVAL} from '../../../../../core/constants';
 import {ChatChannelCardDM} from '../../models/chat-channel-card.model';
 import {ChatDataService} from '../../models/chat-data-service.model';
 
@@ -16,7 +12,7 @@ export class ChatChannelsService {
   constructor(private chatDataService: ChatDataService, private chatChannelsStore: ChatChannelsStore) {
   }
 
-  public getChannelsWithInterval(interval: number = POLLING_INTERVAL): Observable<Array<ChatChannelCardDM>> {
+  public getChannelsWithInterval(interval: number = 5000): Observable<Array<ChatChannelCardDM>> {
     return timer(0, interval).pipe(
       switchMap(() => this.getChatChannels())
     );

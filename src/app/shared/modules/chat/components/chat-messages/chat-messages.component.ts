@@ -4,7 +4,6 @@ import {combineLatest, Observable, timer} from 'rxjs';
 import {fadeInOutAnimation} from '../../../../../core/animations/fade-in-out.animation';
 import {BaseUnsubscribe} from '../../../../../core/base/base-unsubscribe';
 import {filter, switchMap, takeUntil} from 'rxjs/operators';
-import {POLLING_INTERVAL} from '../../../../../core/constants';
 import {ChatMessagesService} from '../../state/chat-messages/chat-messages.service';
 
 @Component({
@@ -25,11 +24,11 @@ export class ChatMessagesComponent extends BaseUnsubscribe implements OnInit {
     this.loadMessagesForSelectedChannel();
   }
 
-  private loadMessagesForSelectedChannel() {
+  private loadMessagesForSelectedChannel(pollingInterval: number = 5000) {
     const selectedChannelId$ = this.chatChanelsQuery.selectedChannelId$.pipe(
       filter((selectedChannelId: string | null) => selectedChannelId !== null)
     );
-    const pollingInterval$ = timer(0, POLLING_INTERVAL);
+    const pollingInterval$ = timer(0, pollingInterval);
     combineLatest(selectedChannelId$, pollingInterval$).pipe(
       switchMap(([selectedChannelId, _]) => this.chatMessagesService.getChannelMessages(selectedChannelId)),
       takeUntil(this.componentDestroyed$)
