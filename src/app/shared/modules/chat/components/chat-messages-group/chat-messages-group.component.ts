@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {ChatMessagesGroupVM} from '../../models/chat-messages-group-vm.model';
 import {ChatChannelMessageDM} from '../../models/chat-message.model';
 import {Observable} from 'rxjs';
@@ -8,13 +8,14 @@ import {ChatMessagesQuery} from '../../state/chat-messages/chat-messages.query';
   selector: 'app-chat-messages-group',
   templateUrl: './chat-messages-group.component.html',
   styleUrls: ['./chat-messages-group.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class ChatMessagesGroupComponent implements OnInit {
+  @Input() messagesGroup: ChatMessagesGroupVM;
+
   firstUnreadMessageId$: Observable<number> = this.chatMessagesQuery.firstUnreadMessageId$;
   unreadMessagesCount$: Observable<number> = this.chatMessagesQuery.unreadMessagesCount$;
-
-  @Input() messagesGroup: ChatMessagesGroupVM;
 
   constructor(private chatMessagesQuery: ChatMessagesQuery) {
   }
@@ -22,8 +23,7 @@ export class ChatMessagesGroupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public trackById(index: number, message: ChatChannelMessageDM) {
+  trackById(index: number, message: ChatChannelMessageDM) {
     return message.id;
   }
-
 }

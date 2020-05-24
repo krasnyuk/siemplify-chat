@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {ChatChannelsQuery} from '../../state/chat-channels/chat-channels-query.service';
 import {ChatChannelsService} from '../../state/chat-channels/chat-channels.service';
@@ -9,10 +9,12 @@ import {ChatChannelCardDM} from '../../models/chat-channel-card.model';
   selector: 'app-chat-channels',
   templateUrl: './chat-channels.component.html',
   styleUrls: ['./chat-channels.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class ChatChannelsComponent implements OnInit, OnDestroy {
   channels$: Observable<Array<ChatChannelCardDM>> = this.chatChanelsQuery.channels$;
+
   private componentDestroyed = new Subject();
 
   constructor(private chatChanelsQuery: ChatChannelsQuery,
@@ -27,7 +29,7 @@ export class ChatChannelsComponent implements OnInit, OnDestroy {
     this.componentDestroyed.next();
   }
 
-  public trackById(index: number, item: ChatChannelCardDM) {
+  trackById(index: number, item: ChatChannelCardDM) {
     return item.channelIdentifier;
   }
 

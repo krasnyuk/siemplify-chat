@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {ChatChannelsQuery} from '../../state/chat-channels/chat-channels-query.service';
 import {combineLatest, Observable, Subject, timer} from 'rxjs';
 import {filter, switchMap, takeUntil} from 'rxjs/operators';
@@ -10,6 +10,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   templateUrl: './chat-messages.component.html',
   styleUrls: ['./chat-messages.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('fadeInOut', [
       state('in', style({opacity: 1})),

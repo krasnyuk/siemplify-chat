@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {ChatChannelsService} from '../../state/chat-channels/chat-channels.service';
 import {FormControl} from '@angular/forms';
 import {SmpComponentSizes} from '@siemplify/ui';
@@ -9,7 +9,8 @@ import {Subject} from 'rxjs';
   selector: 'app-chat-channels-search',
   templateUrl: './chat-channels-search.component.html',
   styleUrls: ['./chat-channels-search.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class ChatChannelsSearchComponent implements OnInit, OnDestroy {
   searchControl = new FormControl(null);

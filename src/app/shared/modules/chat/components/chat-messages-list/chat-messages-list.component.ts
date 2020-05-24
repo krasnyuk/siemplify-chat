@@ -6,7 +6,8 @@ import {
   OnDestroy,
   QueryList,
   ViewChild,
-  ViewChildren
+  ViewChildren,
+  ViewEncapsulation
 } from '@angular/core';
 import {ChatMessagesQuery} from '../../state/chat-messages/chat-messages.query';
 import {Observable, Subject} from 'rxjs';
@@ -18,7 +19,8 @@ import {takeUntil, tap} from 'rxjs/operators';
   selector: 'app-chat-messages-list',
   templateUrl: './chat-messages-list.component.html',
   styleUrls: ['./chat-messages-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class ChatMessagesListComponent implements AfterViewInit, OnDestroy {
   @ViewChild('messagesContainer') private messagesContainer: ElementRef;
@@ -38,7 +40,7 @@ export class ChatMessagesListComponent implements AfterViewInit, OnDestroy {
     this.componentDestroyed.next();
   }
 
-  public trackByDate(index, group: ChatMessagesGroupVM) {
+  trackByDate(index, group: ChatMessagesGroupVM) {
     return group.date.getTime();
   }
 
