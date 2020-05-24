@@ -8,6 +8,18 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    background-color: var(--bg-weight-700);
+    box-shadow: -4px 7px 26px rgba(0, 0, 0, 0.35);
+
+    .simp-dialog-colored-header {
+      background-color: var(--bg-weight-600);
+      color: var(--dark-100);
+    }
+
+    .simp-dialog-colored__content {
+      flex: 1;
+      padding: 0;
+    }
 
     &__content {
       height: 100%;

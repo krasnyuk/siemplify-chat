@@ -8,24 +8,6 @@
 /** Overrides for lib components - global styles. TODO: Move to separate folder */
 
 /* Colored dialog overrides */
-.simp-dialog-colored {
-
-  /* Chat dialog customization */
-  &.chat-dialog {
-    background-color: var(--bg-weight-700);
-    box-shadow: -4px 7px 26px rgba(0, 0, 0, 0.35);
-
-    .simp-dialog-colored-header {
-      background-color: var(--bg-weight-600);
-      color: var(--dark-100);
-    }
-
-    .simp-dialog-colored__content {
-      flex: 1;
-      padding: 0;
-    }
-  }
-}
 
 .simp-avatar {
   &.avatar-squared {
