@@ -20,6 +20,33 @@
     margin-bottom: 64px;
   }
 
+  &--is-first-unread {
+    padding-top: 15px;
+  }
+
+  &__unread-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .unread-messages-label {
+      color: var(--text-primary-color);
+      font-size: var(--size-regular);
+      font-weight: var(--weight-semibold);
+      padding: 0 16px;
+    }
+
+    .line-divider {
+      border-bottom: 1px solid var(--text-secondary-color);
+      display: block;
+      flex: 1;
+    }
+  }
+
   &__content {
     background-color: var(--bg-weight-500);
     border-radius: 4px 4px 4px 0;

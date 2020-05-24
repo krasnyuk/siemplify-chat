@@ -1,4 +1,4 @@
-import {ModuleWithProviders, NgModule, Provider} from '@angular/core';
+import {ModuleWithProviders, NgModule, Provider, Type} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ChatComponent} from './components/chat/chat.component';
 import {ChatDialogComponent} from './components/chat-dialog/chat-dialog.component';
@@ -15,6 +15,7 @@ import {ChatMessagesGroupComponent} from './components/chat-messages-group/chat-
 import {IsTodayPipe} from './pipes/is-today.pipe';
 import {ChatMessageComponent} from './components/chat-message/chat-message.component';
 import { ChatSelectedChannelInfoComponent } from './components/chat-selected-channel-info/chat-selected-channel-info.component';
+import {ChatDataService} from './models/chat-data-service.model';
 
 
 @NgModule({
@@ -48,10 +49,15 @@ export class ChatModule {
     overlayContainer.getContainerElement().classList.add('simp-theme-default');
   }
 
-  static withProviders(chatProviders: Array<Provider>): ModuleWithProviders<ChatModule> {
+  static withConfig(chatDataServiceClass: Type<any>): ModuleWithProviders<ChatModule> {
     return {
       ngModule: ChatModule,
-      providers: [...chatProviders]
+      providers: [
+        {
+          provide: ChatDataService,
+          useClass: chatDataServiceClass
+        }
+      ]
     };
   }
 }

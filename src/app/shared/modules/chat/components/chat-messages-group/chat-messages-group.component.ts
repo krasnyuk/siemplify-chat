@@ -1,6 +1,10 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {ChatMessagesGroupVM} from '../../models/chat-messages-group-vm.model';
 import {ChatChannelMessageDM} from '../../models/chat-message.model';
+import {Observable} from 'rxjs';
+import {ChatChannelCardDM} from '../../models/chat-channel-card.model';
+import {ChatChannelsQuery} from '../../state/chat-channels/chat-channels-query.service';
+import {ChatMessagesQuery} from '../../state/chat-messages/chat-messages.query';
 
 @Component({
   selector: 'app-chat-messages-group',
@@ -9,9 +13,12 @@ import {ChatChannelMessageDM} from '../../models/chat-message.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChatMessagesGroupComponent implements OnInit {
+  firstUnreadMessageId$: Observable<number> = this.chatMessagesQuery.firstUnreadMessageId$;
+  unreadMessagesCount$: Observable<number> = this.chatMessagesQuery.unreadMessagesCount$;
+
   @Input() messagesGroup: ChatMessagesGroupVM;
 
-  constructor() {
+  constructor(private chatMessagesQuery: ChatMessagesQuery) {
   }
 
   ngOnInit(): void {

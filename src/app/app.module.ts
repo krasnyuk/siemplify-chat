@@ -21,12 +21,7 @@ import {WarRoomDataService} from './core/services/war-room-data.service';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    ChatModule.withProviders([
-      {
-        provide: ChatDataService,
-        useClass: WarRoomDataService
-      }
-    ]),
+    ChatModule.withConfig(WarRoomDataService),
     environment.production ? [] : AkitaNgDevtools,
     SmpDialogModule.forRoot(),
     SmpOverlayModule.forRoot(),

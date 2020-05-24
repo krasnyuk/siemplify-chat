@@ -6,5 +6,7 @@
                     [message]="message"
                     [senderSameAsPrevious]="message.fromMember === messagesGroup.messages[i - 1]?.fromMember"
                     [senderSameAsNext]="message.fromMember === messagesGroup.messages[i + 1]?.fromMember"
+                    [isFirstUnread]="(firstUnreadMessageId$ | async) === message.id"
+                    [unreadMessagesCount]="unreadMessagesCount$ | async"
                     [isFirst]="isFirst"></app-chat-message>
 </div>

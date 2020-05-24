@@ -3,8 +3,14 @@
      'chat-message--first': isFirst,
      'chat-message--mine': isMine,
      'chat-message--offset-top': (!senderSameAsPrevious && isMine && !isFirst),
-     'chat-message--offset-bottom': (!senderSameAsNext && isMine)
+     'chat-message--offset-bottom': (!senderSameAsNext && isMine),
+     'chat-message--is-first-unread': isFirstUnread
      }">
+  <div class="chat-message__unread-info" *ngIf="isFirstUnread">
+    <span class="line-divider"></span>
+    <span class="unread-messages-label">{{unreadMessagesCount}} New Message</span>
+    <span class="line-divider"></span>
+  </div>
   <div class="chat-message__content">{{message.message}}</div>
   <div *ngIf="!senderSameAsNext" class="chat-message__time">{{message.sentTime | date: 'h:mm a'}}</div>
 </div>
